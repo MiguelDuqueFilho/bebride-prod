@@ -1,10 +1,10 @@
-# inicio refazendo para aprender 
+# inicio refazendo para aprender
 
 ## inicio
 
 ```cmd
     yarn create next-app bebride-prod
-    yarn add typescript -D   
+    yarn add typescript -D
     yarn add @types/react @types/react-dom @types/node -D
     touch tsconfig.json
 ```
@@ -33,10 +33,10 @@
 }
 
 ```
-eslint 
+eslint
 
 ```cmd
-yarn add eslint -D  
+yarn add eslint -D
 yarn add --dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
 yarn run eslint --init
 
@@ -58,11 +58,19 @@ eslint-plugin-react@^7.21.5 @typescript-eslint/eslint-plugin@latest eslint-confi
 Successfully created .eslintrc.json file in /Users/miguelduquefilho/Desktop/DevNext/bebride-prod
 ✨  Done in 251.94s.
 
-yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks  
+yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## prettier
 
-```cmd 
+```cmd
 yarn add --dev prettier eslint-plugin-prettier eslint-config-prettier
-``
+```
+
+## Material-Ui
+
+```cmd
+yarn add @material-ui/core
+yarn add @material-ui/icons
+yarn add @material-ui/lab
+```
