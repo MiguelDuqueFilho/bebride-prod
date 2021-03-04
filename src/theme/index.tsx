@@ -12,18 +12,26 @@ const themesOptions = [
       },
       background: {
         default: colors.common.white,
-        dark: '#f4f6f8',
-        paper: colors.common.white
+        light: '#a598d7',
+        dark: '#7a6ab9',
+        paper: '#fefff9',
+        mainGradient: 'linear-gradient(to right, #a598d7, #7a6ab9)'
+        // mainGradient: 'linear-gradient(-45deg, #a598d7 0% #7a6ab9 100%)'
       },
       primary: {
-        main: '#a4a1fa'
+        light: '#f9f1ff',
+        main: '#c7bfe6',
+        dark: '#958eb3',
+        contrastText: '#ffffff'
       },
       secondary: {
-        main: '#7b6ffc'
+        light: '#856bd4',
+        main: '#533fa2',
+        dark: '#1e1772'
       },
       text: {
-        primary: colors.blueGrey[900],
-        secondary: colors.blueGrey[600]
+        primary: colors.common.black,
+        secondary: colors.common.white
       }
     },
 
@@ -73,8 +81,10 @@ const themesOptions = [
       },
       background: {
         default: '#282C34',
-        dark: '#1c2025',
-        paper: '#282C34'
+        light: '#a598d7',
+        dark: '#7a6ab9',
+        paper: '#282C34',
+        mainGradient: 'linear-gradient(to right, tomato, cyan)'
       },
       primary: {
         main: '#8a85ff'
