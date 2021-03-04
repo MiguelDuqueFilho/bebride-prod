@@ -8,7 +8,7 @@ const LayoutSite: React.FC = ({ children }) => {
   return (
     <Box className={classes.container}>
       {/* <AccessNotification /> */}
-      {/* <Menu /> */}
+      <Menu />
       {children}
     </Box>
   );

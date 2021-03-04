@@ -1,8 +1,6 @@
-import Box from '@material-ui/core/Box';
-
-import Favorite from '@material-ui/icons/Favorite';
-
 import { useStyles } from './styles';
+import Box from '@material-ui/core/Box';
+import Favorite from '@material-ui/icons/Favorite';
 
 const Team: React.FC = () => {
   const classes = useStyles();

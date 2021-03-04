@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { ContainerTheme, IconLight, IconDark } from './styles';
+import { useStyles } from './styles';
+import Box from '@material-ui/core/Box';
+
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 type themeProps = {
   Theme: Function;
@@ -8,6 +12,7 @@ type themeProps = {
 };
 
 function ThemeToggle({ Theme, themeTitle }: themeProps) {
+  const classes = useStyles();
   const [theme, setTheme] = useState(themeTitle);
 
   const handeClickTheme = (e: React.MouseEvent) => {
@@ -21,17 +26,21 @@ function ThemeToggle({ Theme, themeTitle }: themeProps) {
   }, [themeTitle]);
 
   return (
-    <ContainerTheme className="menu-container">
-      <IconDark
+    <Box className={classes.containerTheme}>
+      <Brightness4Icon
         onClick={handeClickTheme}
-        className={theme === 'LIGHT' ? 'checked' : ''}
+        className={`${classes.iconLightDark} ${
+          theme === 'LIGHT' ? 'checked' : ''
+        }`}
       />
 
-      <IconLight
+      <Brightness7Icon
         onClick={handeClickTheme}
-        className={theme === 'DARK' ? 'checked' : ''}
+        className={`${classes.iconLightDark} ${
+          theme === 'DARK' ? 'checked' : ''
+        }`}
       />
-    </ContainerTheme>
+    </Box>
   );
 }
 
