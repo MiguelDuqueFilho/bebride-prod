@@ -1,4 +1,27 @@
-import { PlanType, DepositionItem } from '../interfaces';
+export type PlanType = {
+  id: number;
+  title: string;
+  resume: string;
+  icon: string;
+  url: string;
+  show: boolean;
+};
+
+export type DepositionItem = {
+  id: number;
+  eventId: number;
+  depositionTitle: string;
+  depositionDescription: string;
+  depositionFilename: string;
+  uploadId: number;
+  depositionShow: boolean;
+  updatedAt: string;
+  Events: [
+    {
+      eventName: string;
+    }
+  ];
+};
 
 export const PlanTypes: PlanType[] = [
   {
@@ -6,7 +29,7 @@ export const PlanTypes: PlanType[] = [
     title: 'Assessoria do Dia',
     resume:
       'Nossa Assessoria do Dia foi pensada com muito carinho para atender os noivos no dia do seu evento.',
-    icon: 'GoChecklist',
+    icon: 'Event',
     url: '/advice_day',
     show: false
   },
@@ -15,7 +38,7 @@ export const PlanTypes: PlanType[] = [
     title: 'Assessoria Final',
     resume:
       'O serviço de assessoria final começa a 60 dias (2 meses) antes do evento.',
-    icon: 'GoBook',
+    icon: 'DateRange',
     url: '/advice_final',
     show: false
   },
@@ -24,7 +47,7 @@ export const PlanTypes: PlanType[] = [
     title: 'Assessoria Completa',
     resume:
       'Sinônimo de tranquilidade. Nossa Assessoria Completa é um serviço desenvolvido desde o início dos preparativos.',
-    icon: 'GoCalendar',
+    icon: 'AssignmentTurnedIn',
     url: '/advice_completed',
     show: false
   },
@@ -33,7 +56,7 @@ export const PlanTypes: PlanType[] = [
     title: 'Consultoria',
     resume:
       'Nossa Consultoria é o serviço ideal para o casal que deseja planejar e organizar seu próprio casamento.',
-    icon: 'GoBrowser',
+    icon: 'CalendarToday',
     url: '/advice_consulting',
     show: false
   }

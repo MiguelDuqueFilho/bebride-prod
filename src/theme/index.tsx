@@ -31,7 +31,7 @@ const themesOptions = [
       secondary: {
         light: '#958bfc',
         main: '#7b6ffc',
-        dark: '#564bd0',
+        dark: '#533fa2',
         contrastText: '#fff'
       },
       error: {
