@@ -4,30 +4,50 @@ import { Itheme } from '../../theme';
 export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
     position: 'relative',
-    width: '100%',
-    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'center',
     backgroundColor: theme.palette.background.default,
+    width: '100%',
+    height: '100%',
     fontFamily: 'Cormorant Garamond, serif',
     paddingRight: '15px',
     paddingLeft: '15px',
     marginRight: 'auto',
     marginLeft: 'auto'
   },
-  containerContent: {
-    marginTop: '2rem'
-  },
-  containerText: {
-    width: '100%',
+  containerWhyTitle: {
     display: 'flex',
     flexDirection: 'column',
-    justifyItems: 'center',
+    justifyItems: 'auto',
     alignContent: 'center',
     textAlign: 'center'
+  },
+  containerContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    margin: '1rem 3rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 3rem',
+      flexDirection: 'column'
+    },
+    [theme.breakpoints.down('sm')]: {
+      margin: '1rem 1rem',
+      flexDirection: 'column'
+    }
+  },
+  containerWhyText: {
+    color: theme.palette.text.primary,
+    textAlign: 'justify',
+    fontSize: '1.5em',
+    // margin: '1rem',
+
+    [theme.breakpoints.down('md')]: {
+      fontSize: ' 1.2em'
+    }
   },
   h2: {
     textAlign: 'start',
@@ -36,6 +56,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       textAlign: 'center'
     }
   },
+
   p: {
     margin: '2rem 6rem',
     fontSize: '1.6em',
@@ -53,59 +74,45 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       fontSize: '1.1em'
     }
   },
-  containerTeam: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'center',
-    margin: '1rem 3rem',
-    [theme.breakpoints.down('md')]: {
-      margin: '1rem 3rem',
-      flexDirection: 'column'
-    },
-    [theme.breakpoints.down('sm')]: {
-      margin: '1rem 1rem',
-      flexDirection: 'column'
-    }
+  span: {
+    margin: '1rem 2rem',
+    fontSize: '1.3rem',
+    textAlign: 'center',
+    color: theme.palette.text.primary
   },
-  containerTeamImag: {
+  containerWhyDescr: {
+    color: theme.palette.text.primary,
+    textAlign: 'justify',
+    margin: '1rem'
+  },
+  icon: {
+    color: theme.palette.primary.main,
+    marginRight: '2rem',
+    fontSize: '1.3em'
+  },
+  containerTeam2Imag: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     flex: '0 0 50%',
     maxWidth: '100%',
+    marginTop: '40px',
     [theme.breakpoints.down('md')]: {
       flex: '0 0 50%',
       maxWidth: '80%',
-      alignSelf: 'center'
+      alignSelf: 'center',
+      marginTop: '40px'
     },
     [theme.breakpoints.down('sm')]: {
       flex: '0 0 50%',
-      maxWidth: '100%'
+      maxWidth: '100%',
+      marginTop: '40px'
     }
   },
-  containerTeamText: {
-    flex: '0 0 50%',
-    maxWidth: '50%',
-    marginTop: '2rem',
-    [theme.breakpoints.down('md')]: {
-      flex: '0 0 100%',
-      maxWidth: '100%'
-    }
-  },
-  imageTeam: {
+  imageTeam2: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '12px'
-  },
-  teamDescr: {
-    color: theme.palette.text.primary,
-    textAlign: 'justify',
-    fontSize: '1.5em',
-    margin: '1rem',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.2em'
-    }
   }
 }));

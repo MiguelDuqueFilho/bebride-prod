@@ -6,8 +6,8 @@ import { PlanType, DepositionItem } from '../interfaces';
 import LayoutSite from '../components/LayoutSite';
 import BannerBody from '../components/BannerBody';
 import Team from '../components/Team';
+import Why from '../components/Why';
 // import Plans from '../components/Plans';
-// import Why from '../components/Why';
 // import Depositions from '../components/Depositions';
 // import Final from '../components/Final';
 // import Footer from '../components/Footer/index';
@@ -22,7 +22,7 @@ function Home({ items, depositionItens }: Props) {
     <LayoutSite>
       <BannerBody />
       <Team />
-      {/* <Why /> */}
+      <Why />
       {/* <Plans items={items} /> */}
       {/* <Depositions depositionItens={depositionItens} /> */}
       {/* <Final /> */}

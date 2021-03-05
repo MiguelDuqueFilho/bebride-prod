@@ -1,5 +1,4 @@
 import { createMuiTheme, Theme, ThemeOptions } from '@material-ui/core/styles';
-import { colors } from '@material-ui/core';
 import { THEMES } from '../utils/constants';
 import { defaultSettings } from '../contexts/SettingsContext';
 
@@ -8,30 +7,62 @@ const themesOptions = [
     name: THEMES.LIGHT,
     palette: {
       action: {
-        active: colors.blueGrey[600]
+        active: '#fff', // ok
+        hover: 'rgba(255, 255, 255, 0.6)', // ok
+        selected: 'rgba(255, 255, 255, 0.08)',
+        disabled: 'rgba(255, 255, 255, 0.26)',
+        disabledBackground: 'rgba(255, 255, 255, 0.12)',
+        focus: 'rgba(255, 255, 255, 0.12)'
       },
+
       background: {
-        default: colors.common.white,
+        default: '#fafafa',
         light: '#a598d7',
         dark: '#7a6ab9',
-        paper: '#fefff9',
-        mainGradient: 'linear-gradient(to right, #a598d7, #7a6ab9)'
-        // mainGradient: 'linear-gradient(-45deg, #a598d7 0% #7a6ab9 100%)'
+        paper: '#fff',
+        mainGradient: 'linear-gradient(to right, #fafafa, #7a6ab9)'
       },
       primary: {
-        light: '#f9f1ff',
+        light: '#d2cbeb',
         main: '#c7bfe6',
-        dark: '#958eb3',
-        contrastText: '#ffffff'
+        dark: '#8b85a1',
+        contrastText: '#fff'
       },
       secondary: {
-        light: '#856bd4',
-        main: '#533fa2',
-        dark: '#1e1772'
+        light: '#958bfc',
+        main: '#7b6ffc',
+        dark: '#564bd0',
+        contrastText: '#fff'
+      },
+      error: {
+        light: '#e57373',
+        main: '#f44336',
+        dark: '#d32f2f',
+        contrastText: '#fff'
+      },
+      warning: {
+        light: '#ffb74d',
+        main: '#ff9800',
+        dark: '#f57c00',
+        contrastText: '#fff'
+      },
+      info: {
+        light: '#64b5f6',
+        main: '#2196f3',
+        dark: '#1976d2',
+        contrastText: '#fff'
+      },
+      success: {
+        light: '#81c784',
+        main: '#4caf50',
+        dark: '#388e3c',
+        contrastText: '#fff'
       },
       text: {
-        primary: colors.common.black,
-        secondary: colors.common.white
+        primary: 'rgba(0,0,0,0.87)',
+        secondary: 'rgba(0,0,0,0.54)',
+        disabled: 'rgba(0,0,0,0.38)',
+        hint: 'rgba(0,0,0,0.38)'
       }
     },
 
@@ -62,7 +93,7 @@ const themesOptions = [
       backgroundTitle: '#E78F8E',
       input: '#333',
       inputIcon: '#acacac',
-      inputBackgroud: '#f0f0f0',
+      inputBackground: '#f0f0f0',
       inputPlaceHolder: '#aaa',
       linkHover: '#ff7e20'
     }
@@ -72,8 +103,8 @@ const themesOptions = [
 
     palette: {
       action: {
-        active: 'rgba(255, 255, 255, 0.54)',
-        hover: 'rgba(255, 255, 255, 0.04)',
+        active: '#fff', // ok
+        hover: 'rgba(255, 255, 255, 0.6)', // ok
         selected: 'rgba(255, 255, 255, 0.08)',
         disabled: 'rgba(255, 255, 255, 0.26)',
         disabledBackground: 'rgba(255, 255, 255, 0.12)',
@@ -84,17 +115,46 @@ const themesOptions = [
         light: '#a598d7',
         dark: '#7a6ab9',
         paper: '#282C34',
-        mainGradient: 'linear-gradient(to right, tomato, cyan)'
+        mainGradient: 'linear-gradient(to right, #282C34, #7a6ab9)'
       },
       primary: {
-        main: '#8a85ff'
+        main: '#8a85ff',
+        light: '#f9f1ff',
+        dark: '#533fa2',
+        contrastText: '#fff'
       },
       secondary: {
         main: '#8a85ff'
       },
+      error: {
+        light: '#e57373',
+        main: '#f44336',
+        dark: '#d32f2f',
+        contrastText: '#fff'
+      },
+      warning: {
+        light: '#ffb74d',
+        main: '#ff9800',
+        dark: '#f57c00',
+        contrastText: '#fff'
+      },
+      info: {
+        light: '#64b5f6',
+        main: '#2196f3',
+        dark: '#1976d2',
+        contrastText: '#fff'
+      },
+      success: {
+        light: '#81c784',
+        main: '#4caf50',
+        dark: '#388e3c',
+        contrastText: '#fff'
+      },
       text: {
-        primary: '#e6e5e8',
-        secondary: '#adb0bb'
+        primary: '#ffffff',
+        secondary: '#d0d3e1',
+        disabled: '#e6e5e8',
+        hint: '#e6e5e8'
       }
     },
     // styled-componentes
@@ -123,14 +183,15 @@ const themesOptions = [
       backgroundTitle: '#585566',
       input: '#333',
       inputIcon: '#acacac',
-      inputBackgroud: '#f0f0f0',
+      inputBackground: '#f0f0f0',
       inputPlaceHolder: '#aaa',
       linkHover: '#ff7e20'
     }
   }
 ];
 
-export type IThemeOptions = typeof themesOptions[0];
+type MyThemeOptions = typeof themesOptions[0];
+export type IThemeOptions = MyThemeOptions & ThemeOptions;
 export type Itheme = IThemeOptions & Theme;
 
 export const createTheme = (config = defaultSettings) => {

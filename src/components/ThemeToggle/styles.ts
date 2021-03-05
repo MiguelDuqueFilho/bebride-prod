@@ -19,15 +19,16 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     zIndex: theme.zIndex.appBar + 17,
     cursor: 'pointer',
 
-    color: theme.palette.common.white,
     /* color: ${props => props.theme.color.toggle}, */
     transition: '0.4s',
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
+      backgroundColor: theme.palette.background.dark,
+      color: theme.palette.action.active,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.background.light
       }
     }
   },
@@ -43,15 +44,15 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     zIndex: theme.zIndex.appBar + 17,
     cursor: 'pointer',
 
-    color: theme.palette.common.white,
-    /* color: ${props => props.theme.color.toggle}, */
     transition: '0.4s',
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
+      backgroundColor: theme.palette.background.dark,
+      color: theme.palette.action.active,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.background.light
       }
     }
   }

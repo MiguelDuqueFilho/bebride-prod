@@ -24,15 +24,16 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     borderRadius: '50%',
     zIndex: theme.zIndex.appBar + 17,
     cursor: 'pointer',
-    color: theme.palette.common.white,
     opacity: '0',
     transition: '0.4s',
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
+      backgroundColor: theme.palette.background.dark,
+      color: theme.palette.action.active,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.background.default
+        backgroundColor: theme.palette.background.light
       }
     }
   },
@@ -53,10 +54,12 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   menuItens: {
     position: 'absolute',
     top: '0',
-    height: '40px',
+    height: '55px',
     width: '100vw',
     opacity: '0.8',
-
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: theme.palette.background.dark
+    },
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
       width: '2400px',
@@ -66,7 +69,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       left: '50%',
       transform: 'translateX(-150%) translateY(-50%)',
       webkitTransform: 'translate3d(-150%, -50%, 0)',
-      background: theme.palette.background.mainGradient,
+      backgroundColor: theme.palette.background.dark,
 
       transition: '1.5s',
       display: 'flex',
@@ -119,15 +122,15 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     textDecoration: 'none',
     margin: '0.5rem',
     display: 'inline-block',
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
     transition: '0.3s',
     fontFamily: 'Roboto Times serif',
-    color: theme.palette.common.white,
+    color: theme.palette.action.active,
     fontSize: '1.1rem',
     lineHeight: '1rem',
     zIndex: theme.zIndex.appBar + 20,
-    'a:hover': {
-      color: theme.palette.common.black
+    '&:hover': {
+      color: theme.palette.action.hover
     }
   }
 }));

@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     alignItems: 'center',
     textAlign: 'center',
     flexDirection: 'row',
+    backgroundColor: theme.palette.background.default,
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column-reverse'
     }
