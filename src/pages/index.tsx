@@ -15,7 +15,7 @@ import Team from '../components/Team';
 import Why from '../components/Why';
 import Plans from '../components/Plans';
 import Depositions from '../components/Depositions';
-// import Final from '../components/Final';
+import Final from '../components/Final';
 // import Footer from '../components/Footer/index';
 
 type Props = {
@@ -31,7 +31,7 @@ function Home({ itens, depositionItens }: Props) {
       <Why />
       <Plans plan={itens} />
       <Depositions depositionItens={depositionItens} />
-      {/* <Final /> */}
+      <Final />
       {/* <Footer /> */}
     </LayoutSite>
   );
