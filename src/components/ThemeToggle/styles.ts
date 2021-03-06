@@ -24,11 +24,11 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
-      backgroundColor: theme.palette.background.dark,
-      color: theme.palette.action.active,
+      backgroundColor: theme.palette.secondary.dark,
+      color: theme.palette.action.text,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.background.light
+        color: theme.palette.action.textHover
       }
     }
   },
@@ -48,11 +48,11 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
-      backgroundColor: theme.palette.background.dark,
-      color: theme.palette.action.active,
+      backgroundColor: theme.palette.secondary.dark,
+      color: theme.palette.action.text,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.background.light
+        color: theme.palette.action.textHover
       }
     }
   }

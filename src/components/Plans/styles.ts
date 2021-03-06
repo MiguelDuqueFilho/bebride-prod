@@ -5,16 +5,14 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
     width: '100%',
     height: '100%',
-    padding: '3rem 0',
-    margin: '3rem 0',
-    backgroundColor: theme.palette.background.dark
+    backgroundColor: theme.palette.secondary.dark
   },
   containerContent: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    marginTop: '10px'
+    padding: '25px 0'
   },
   containerItens: {
     width: '90%',
@@ -41,7 +39,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   p: {
     margin: '2rem 6rem',
-    fontSize: '1.6em',
+    fontSize: '1.7em',
     lineHeight: '1.5em',
     color: theme.palette.primary.contrastText,
     textAlign: 'center',
@@ -57,31 +55,35 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   span: {
     margin: '1rem 3rem',
-    fontSize: '1.4em',
+    fontSize: '1.5em',
     textAlign: 'center',
     color: theme.palette.primary.contrastText,
     textTransform: 'uppercase'
   },
+  containerButton: {
+    marginBottom: '30px'
+  },
   buttonWhatsApp: {
     padding: '0.75rem 1.75rem',
-    marginTop: '3rem',
+    marginTop: '2rem',
     fontFamily: 'romantisch, serif',
-    fontSize: '1.6rem',
+    fontSize: '1.7rem',
     color: theme.palette.secondary.contrastText,
     borderRadius: '49px',
-    backgroundColor: theme.palette.secondary.dark,
+    backgroundColor: theme.palette.action.active,
     textDecoration: 'none',
     transition: '0.3s',
     display: 'inline-block',
     cursor: 'pointer',
     '&:hover': {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: theme.palette.action.hover
     }
   },
   svg: {
-    marginTop: '3px',
+    color: theme.palette.primary.contrastText,
     marginRight: '1rem',
     verticalAlign: 'top',
+    fontSize: '1.3em',
     '&:hover': {
       backgroundColor: theme.palette.action.hover
     }

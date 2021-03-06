@@ -40,13 +40,13 @@ function Plans({ plan }: Props) {
             <Type key={item.id} item={item} />
           ))}
         </Box>
-        <Box>
+        <Box className={classes.containerButton}>
           <a
             className={classes.buttonWhatsApp}
             type="button"
             onClick={onWhatsapp}
           >
-            <WhatsApp />
+            <WhatsApp className={classes.svg} />
             #vamosjuntas?
           </a>
         </Box>

@@ -11,11 +11,11 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     overflow: 'overlay',
     msOverflowStyle: 'none' /* IE and Edge */,
     scrollbarWidth: 'auto' /* Firefox */,
-    '::-webkitScrollbar': {
+    '::webkitScrollbar': {
       width: '0px',
       background: 'transparent' /* make scrollbar transparent */
     },
-    '::-webkitScrollbarTrack': {
+    '::webkitScrollbarTrack': {
       background: 'transparent'
     }
   }

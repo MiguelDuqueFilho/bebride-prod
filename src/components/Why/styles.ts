@@ -12,8 +12,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     width: '100%',
     height: '100%',
     fontFamily: 'Cormorant Garamond, serif',
-    paddingRight: '15px',
-    paddingLeft: '15px',
+    padding: '15px',
     marginRight: 'auto',
     marginLeft: 'auto'
   },

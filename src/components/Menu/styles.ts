@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+
 import { Itheme } from '../../theme';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
@@ -10,7 +11,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   containerToggle: {
     display: 'none',
-    backgroundColor: theme.palette.background.dark,
     [theme.breakpoints.down('md')]: {
       display: 'block'
     }
@@ -29,11 +29,11 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
-      backgroundColor: theme.palette.background.dark,
-      color: theme.palette.action.active,
+      backgroundColor: theme.palette.secondary.dark,
+      color: theme.palette.action.text,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.background.light
+        color: theme.palette.action.textHover
       }
     }
   },
@@ -56,9 +56,9 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     top: '0',
     height: '55px',
     width: '100vw',
-    opacity: '0.8',
+
     [theme.breakpoints.up('md')]: {
-      backgroundColor: theme.palette.background.dark
+      backgroundColor: theme.palette.secondary.dark
     },
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
@@ -100,8 +100,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     position: 'absolute',
     top: '0',
     marginTop: '11px',
-    marginLeft: '40px',
-    width: '70vw',
+    marginLeft: '20%',
+    width: '50vw',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -125,12 +125,12 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     // textTransform: 'uppercase',
     transition: '0.3s',
     fontFamily: 'Roboto Times serif',
-    color: theme.palette.action.active,
+    color: theme.palette.action.text,
     fontSize: '1.1rem',
     lineHeight: '1rem',
     zIndex: theme.zIndex.appBar + 20,
     '&:hover': {
-      color: theme.palette.action.hover
+      color: theme.palette.action.textHover
     }
   }
 }));

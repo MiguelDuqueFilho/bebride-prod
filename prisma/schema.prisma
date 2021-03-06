@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  password  String?
+  role      String
+  provider  String
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+
+model Event {
+  id Int     @id @default(autoincrement())
+  title String
+  content String
+  status String
+  initialDate DateTime? @default(now())
+  eventDate DateTime? @default(now())
+  finishDate DateTime? @default(now())
+  fileKey    String?
+  fileLocation String?
+  fileOriginalName String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // users     User[]
+  // published Boolean @default(false)
+}
+
+// model UsersOnEvents {
+//   user        User      @relation(fields: [userId], references: [id])
+//   userId      Int       // relation scalar field (used in the `@relation` attribute above)
+//   event       Event     @relation(fields: [eventId], references: [id])
+//   eventId     Int      // relation scalar field (used in the `@relation` attribute above)
+//   @@id([userId, eventId])
+// }
+
+// model Post {
+//   id         Int         @id @default(autoincrement())
+//   title      String
+//   published  Boolean     @default(false)
+//   author     User        @relation(fields: [authorId], references: [id])
+//   authorId   Int
+//   categories Category[]  @relation(references: [id])
+//   createdAt  DateTime    @default(now())
+// }
+
+// model Category {
+//   id    Int     @id @default(autoincrement())
+//   name  String
+//   posts Post[]  @relation(references: [id])
+// }
+

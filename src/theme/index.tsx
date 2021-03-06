@@ -7,8 +7,10 @@ const themesOptions = [
     name: THEMES.LIGHT,
     palette: {
       action: {
-        active: '#fff', // ok
-        hover: 'rgba(255, 255, 255, 0.6)', // ok
+        active: '#644fba', // ok
+        hover: '#7e6cc6', // ok
+        text: '#fff', //ok
+        textHover: 'rgba(255, 255, 255, 0.6)', // ok
         selected: 'rgba(255, 255, 255, 0.08)',
         disabled: 'rgba(255, 255, 255, 0.26)',
         disabledBackground: 'rgba(255, 255, 255, 0.12)',
@@ -16,11 +18,11 @@ const themesOptions = [
       },
 
       background: {
-        default: '#fafafa',
         light: '#a598d7',
+        default: '#fafafa',
         dark: '#7a6ab9',
         paper: '#fff',
-        mainGradient: 'linear-gradient(to right, #fafafa, #7a6ab9)'
+        mainGradient: 'linear-gradient(to right, #d2cbeb, #7a6ab9)'
       },
       primary: {
         light: '#d2cbeb',
@@ -30,7 +32,7 @@ const themesOptions = [
       },
       secondary: {
         light: '#958bfc',
-        main: '#7b6ffc',
+        main: '#7167e4',
         dark: '#533fa2',
         contrastText: '#fff'
       },
@@ -44,7 +46,7 @@ const themesOptions = [
         light: '#ffb74d',
         main: '#ff9800',
         dark: '#f57c00',
-        contrastText: '#fff'
+        contrastText: '#000'
       },
       info: {
         light: '#64b5f6',
@@ -103,8 +105,10 @@ const themesOptions = [
 
     palette: {
       action: {
-        active: '#fff', // ok
-        hover: 'rgba(255, 255, 255, 0.6)', // ok
+        active: '#644fba', // ok
+        hover: '#7e6cc6', // ok
+        text: '#fff', //ok
+        textHover: 'rgba(255, 255, 255, 0.6)', // ok
         selected: 'rgba(255, 255, 255, 0.08)',
         disabled: 'rgba(255, 255, 255, 0.26)',
         disabledBackground: 'rgba(255, 255, 255, 0.12)',
@@ -124,7 +128,10 @@ const themesOptions = [
         contrastText: '#fff'
       },
       secondary: {
-        main: '#8a85ff'
+        light: '#958bfc',
+        main: '#7167e4',
+        dark: '#533fa2',
+        contrastText: '#fff'
       },
       error: {
         light: '#e57373',

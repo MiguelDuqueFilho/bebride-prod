@@ -14,7 +14,7 @@ import BannerBody from '../components/BannerBody';
 import Team from '../components/Team';
 import Why from '../components/Why';
 import Plans from '../components/Plans';
-// import Depositions from '../components/Depositions';
+import Depositions from '../components/Depositions';
 // import Final from '../components/Final';
 // import Footer from '../components/Footer/index';
 
@@ -30,7 +30,7 @@ function Home({ itens, depositionItens }: Props) {
       <Team />
       <Why />
       <Plans plan={itens} />
-      {/* <Depositions depositionItens={depositionItens} /> */}
+      <Depositions depositionItens={depositionItens} />
       {/* <Final /> */}
       {/* <Footer /> */}
     </LayoutSite>

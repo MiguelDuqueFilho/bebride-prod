@@ -29,13 +29,13 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   h2: {
     color: theme.palette.secondary.contrastText,
-    fontSize: '1.2em',
+    fontSize: '1.5em',
     paddingTop: '1rem',
     paddingBottom: '1rem'
   },
   p: {
     color: theme.palette.secondary.contrastText,
-    fontSize: '1em',
+    fontSize: '1.1em',
     paddingTop: '1rem',
     minHeight: '8rem',
     textAlign: 'justify',
