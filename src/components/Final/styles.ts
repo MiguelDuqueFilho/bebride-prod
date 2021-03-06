@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'column',
-    padding: '2.5rem 15px',
+    padding: '3rem 15px',
     textAlign: 'center',
     fontSize: '1.2rem',
     color: theme.palette.text.primary
@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     color: theme.palette.text.primary
   },
   p: {
-    margin: '2rem 15px',
+    margin: '1rem 15px',
     fontSize: '2.5rem',
     lineHeight: '1.5em',
     fontFamily: 'romantisch, serif',
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     width: '30%',
-    marginTop: '2rem',
+    marginTop: '1rem',
     marginBottom: '30px',
     marginLeft: '15px',
     color: theme.palette.text.primary,
@@ -61,10 +61,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       width: '60%'
     }
   },
-  i: {
-    color: theme.palette.text.primary,
-    fontSize: '32px'
-  },
+
   socialIcon: {
     textDecoration: 'none',
     transition: '0.3s',

@@ -12,94 +12,106 @@ const Footer: React.FC = () => {
   }
   return (
     <footer>
-      <Container>
-        <FooterWrap>
-          <WrapContainer>
-            <FooterTitle>Conheça-nos</FooterTitle>
-            <ul>
-              <li>
-                <p title="Informações Corporativas">Informações Corporativas</p>
+      <Box className={classes.container}>
+        <Box className={classes.footerWrap}>
+          <Box className={classes.wrapContainer}>
+            <h3 className={classes.footerTitle}>Conheça-nos</h3>
+            <ul className={classes.ul}>
+              <li className={classes.li}>
+                <a className={classes.liP} title="Informações Corporativas">
+                  Informações Corporativas
+                </a>
               </li>
-              <li>
-                <p>Razão Social</p>
+              <li className={classes.li}>
+                <a className={classes.liP}>Razão Social</a>
               </li>
-              <li>
-                <p title="CNPJ">
+              <li className={classes.li}>
+                <a className={classes.liP} title="CNPJ">
                   CNPJ: <span>00.000.000/0001-00</span>
-                </p>
+                </a>
               </li>
             </ul>
-          </WrapContainer>
-          <WrapContainer>
-            <FooterTitle>Redes Sociais</FooterTitle>
-            <ul>
-              <li>
+          </Box>
+          <Box className={classes.wrapContainer}>
+            <Box className={classes.footerTitle}>Redes Sociais</Box>
+            <ul className={classes.ul}>
+              <li className={classes.li}>
                 <a
+                  className={classes.liA}
                   href="https://www.facebook.com/bebridecasamentos"
                   title="Facebook"
                 >
                   Facebook
                 </a>
               </li>
-              <li>
+              <li className={classes.li}>
                 <a
+                  className={classes.liA}
                   href="https://www.instagram.com/bebridecasamentos"
                   title="Instagram"
                 >
                   Instagram
                 </a>
               </li>
-              <li>
-                <a href="https://twitter.com/bebride_" title="Twitter">
+              <li className={classes.li}>
+                <a
+                  className={classes.liA}
+                  href="https://twitter.com/bebride_"
+                  title="Twitter"
+                >
                   Twitter
                 </a>
               </li>
-              <li>
-                <a title="Whatsapp" onClick={onWhatsapp}>
+              <li className={classes.li}>
+                <a
+                  className={classes.liA}
+                  title="Whatsapp"
+                  onClick={onWhatsapp}
+                >
                   Whatsapp
                 </a>
               </li>
             </ul>
-          </WrapContainer>
-          <WrapContainer>
-            <FooterTitle>Informações</FooterTitle>
-            <ul>
-              <li>
-                <a href="#" title="Contato">
+          </Box>
+          <Box className={classes.wrapContainer}>
+            <Box className={classes.footerTitle}>Informações</Box>
+            <ul className={classes.ul}>
+              <li className={classes.li}>
+                <a className={classes.liA} href="#" title="Contato">
                   Contato
                 </a>
               </li>
-              <li>
+              <li className={classes.li}>
                 <Link href="/about">
-                  <a>Sobre</a>
+                  <a className={classes.liA}>Sobre</a>
                 </Link>
               </li>
-              <li>
-                <a href="#" title="Login">
+              <li className={classes.li}>
+                <a className={classes.liA} href="#" title="Login">
                   Login
                 </a>
               </li>
-              <li>
-                <a href="#" title="Recuperar a Senha">
+              <li className={classes.li}>
+                <a className={classes.liA} href="#" title="Recuperar a Senha">
                   Recuperar a Senha
                 </a>
               </li>
-              <li>
-                <a href="#" title="Área do Cliente">
+              <li className={classes.li}>
+                <a className={classes.liA} href="#" title="Área do Cliente">
                   Área do Cliente
                 </a>
               </li>
             </ul>
-          </WrapContainer>
-          <Clear></Clear>
-        </FooterWrap>
-      </Container>
-      <Foot>
-        <FootWrap>
+          </Box>
+          <Box className={classes.clear}></Box>
+        </Box>
+      </Box>
+      <Box className={classes.foot}>
+        <Box className={classes.footWrap}>
           MDuque &copy; 2021
           {/* <a href="#">MDUQUE</a> */}
-        </FootWrap>
-      </Foot>
+        </Box>
+      </Box>
     </footer>
   );
 };
