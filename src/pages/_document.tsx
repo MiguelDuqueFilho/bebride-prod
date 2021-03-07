@@ -10,6 +10,12 @@ export default class MyDocument extends Document {
           <meta name="theme-color" />
           <link rel="icon" href="/images/favicon.ico" />
           <link
+            rel="preload"
+            href="/fonts/romantisch/romantisch-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />

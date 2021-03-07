@@ -20,21 +20,17 @@ const Final: React.FC = () => {
           <p className={classes.p}>Vamos juntas?</p>
         </h2>
         <Box className={classes.teamSocial}>
-          <a
-            type="button"
-            className={classes.socialIcon}
-            href="https://www.facebook.com/bebridecasamentos"
-          >
-            <Facebook fontSize="large" />
+          <a href="https://www.facebook.com/bebridecasamentos">
+            <Facebook className={classes.icon} />
           </a>
           <a
             className={classes.socialIcon}
             href="https://www.instagram.com/bebridecasamentos"
           >
-            <Instagram fontSize="large" />
+            <Instagram className={classes.icon} />
           </a>
           <a className={classes.socialIcon} href="https://twitter.com/bebride_">
-            <Twitter fontSize="large" />
+            <Twitter className={classes.icon} />
           </a>
         </Box>
         <Image

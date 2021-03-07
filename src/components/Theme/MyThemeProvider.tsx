@@ -15,11 +15,8 @@ function MyThemeProvider({ children }) {
 
   return (
     <MuiThemeProvider theme={theme}>
-      {/* <ThemeProvider theme={theme}> */}
       <CssBaseline />
       {children}
-      {/* <GlobalStyle /> */}
-      {/* </ThemeProvider> */}
     </MuiThemeProvider>
   );
 }

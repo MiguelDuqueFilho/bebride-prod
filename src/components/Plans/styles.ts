@@ -26,8 +26,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
-    fontFamily: 'Cormorant Garamond, serif'
+    flexDirection: 'column'
   },
   h2: {
     textAlign: 'start',
@@ -66,9 +65,9 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   buttonWhatsApp: {
     padding: '0.75rem 1.75rem',
     marginTop: '2rem',
-    fontFamily: 'romantisch, serif',
+    fontFamily: 'romantisch',
     fontSize: '1.7rem',
-    color: theme.palette.secondary.contrastText,
+    color: theme.palette.primary.contrastText,
     borderRadius: '49px',
     backgroundColor: theme.palette.action.active,
     textDecoration: 'none',

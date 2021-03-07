@@ -108,14 +108,15 @@ const themesOptions = [
 
     palette: {
       action: {
-        active: '#644fba', // ok
-        hover: '#7e6cc6', // ok
+        active: '#fff', // ok
+        hover: '#acacac', // ok
         text: '#fff', //ok
         textHover: 'rgba(255, 255, 255, 0.6)', // ok
-        selected: 'rgba(255, 255, 255, 0.08)',
+        selected: 'rgba(255, 255, 255, 0.4)',
         disabled: 'rgba(255, 255, 255, 0.26)',
         disabledBackground: 'rgba(255, 255, 255, 0.12)',
-        focus: 'rgba(255, 255, 255, 0.12)'
+        focus: 'rgba(255, 255, 255, 0.12)',
+        linkHover: '#ff7e20'
       },
       background: {
         default: '#282C34',
@@ -128,7 +129,7 @@ const themesOptions = [
         main: '#8a85ff',
         light: '#f9f1ff',
         dark: '#533fa2',
-        contrastText: '#fff'
+        contrastText: '#000'
       },
       secondary: {
         light: '#958bfc',
@@ -164,7 +165,9 @@ const themesOptions = [
         primary: '#ffffff',
         secondary: '#d0d3e1',
         disabled: '#e6e5e8',
-        hint: '#e6e5e8'
+        hint: '#e6e5e8',
+        normal: '#f8f9fa',
+        light: '#757575'
       }
     },
     // styled-componentes
@@ -219,9 +222,10 @@ export const createTheme = (config = defaultSettings) => {
       '@global': {
         '@font-face': {
           fontFamily: 'romantisch',
+          src: `url('/fonts/romantisch/romantisch-Regular.ttf') format('truetype')`,
           fontStyle: 'normal',
           fontWeight: 'normal',
-          src: `url('/fonts/romantisch-Regular.ttf') format('truetype')`
+          fontDisplay: 'swap'
         },
         '*': {
           margin: '0',
@@ -229,6 +233,7 @@ export const createTheme = (config = defaultSettings) => {
           boxSizing: 'border-box'
         },
         body: {
+          fontFamily: 'Cormorant Garamond',
           overflowY: 'auto',
           overflowX: 'hidden'
         }

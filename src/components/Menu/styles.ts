@@ -124,7 +124,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     display: 'inline-block',
     // textTransform: 'uppercase',
     transition: '0.3s',
-    fontFamily: 'Roboto Times serif',
+    fontFamily: 'Roboto',
     color: theme.palette.action.text,
     fontSize: '1.1rem',
     lineHeight: '1rem',

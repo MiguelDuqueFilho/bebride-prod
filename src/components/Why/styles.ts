@@ -11,7 +11,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     backgroundColor: theme.palette.background.default,
     width: '100%',
     height: '100%',
-    fontFamily: 'Cormorant Garamond, serif',
     padding: '15px',
     marginRight: 'auto',
     marginLeft: 'auto'

@@ -19,7 +19,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     color: theme.palette.text.primary
   },
   h2: {
-    fontFamily: 'Cormorant Garamond, serif',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.5rem'
     },
@@ -36,7 +35,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     margin: '1rem 15px',
     fontSize: '2.5rem',
     lineHeight: '1.5em',
-    fontFamily: 'romantisch, serif',
+    fontFamily: 'romantisch',
     color: theme.palette.primary.main
   },
   svg: {
@@ -66,6 +65,13 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     textDecoration: 'none',
     transition: '0.3s',
     color: theme.palette.action.active,
+    '&:hover': {
+      color: theme.palette.action.hover
+    }
+  },
+  icon: {
+    color: theme.palette.action.active,
+    fontSize: '2.5em',
     '&:hover': {
       color: theme.palette.action.hover
     }

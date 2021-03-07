@@ -29,7 +29,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     }
   },
   nameBebride: {
-    fontFamily: 'romantisch, serif',
+    fontFamily: 'romantisch',
     fontSize: '8em',
     marginBottom: '-20px',
     color: theme.palette.primary.main,
@@ -44,7 +44,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     }
   },
   descrBebride: {
-    fontFamily: 'Times New Roman',
     fontSize: '1.5em',
     fontStyle: 'normal',
     // fontWeight: '600',

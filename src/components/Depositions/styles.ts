@@ -6,8 +6,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     position: 'relative',
     width: '100%',
     height: '100%',
-    backgroundColor: theme.palette.background.default,
-    fontFamily: 'Cormorant Garamond, serif'
+    backgroundColor: theme.palette.background.default
   },
   containerContent: {
     padding: '0 3rem'

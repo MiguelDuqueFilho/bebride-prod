@@ -12,7 +12,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     alignItems: 'center',
     textAlign: 'center',
     backgroundColor: theme.palette.background.default,
-    fontFamily: 'Cormorant Garamond, serif',
     paddingRight: '15px',
     paddingLeft: '15px',
     marginRight: 'auto',

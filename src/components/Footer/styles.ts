@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'flex-start'
     }
   },
   wrapContainer: {
@@ -53,10 +53,6 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   liP: {
     color: theme.palette.text.light
   },
-  // liSpan: {
-  //   fontfamily: 'Times New Roman, Times, serif',
-  //   fontsize: '0.9rem'
-  // },
   foot: {
     fontSize: '14px',
     background: 'url("/images/foot_bg.jpg") repeat',
