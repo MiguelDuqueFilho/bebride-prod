@@ -19,8 +19,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     position: 'absolute',
     top: '0.5rem',
     left: '0.5rem',
-    width: '40px',
-    height: '40px',
+    width: '25px',
+    height: '25px',
     borderRadius: '50%',
     zIndex: theme.zIndex.appBar + 17,
     cursor: 'pointer',
@@ -54,7 +54,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   menuItens: {
     position: 'absolute',
     top: '0',
-    height: '55px',
+    height: '40px',
     width: '100vw',
 
     [theme.breakpoints.up('md')]: {
@@ -120,14 +120,14 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   a: {
     textDecoration: 'none',
-    margin: '0.5rem',
+    margin: '0.2rem',
     display: 'inline-block',
     // textTransform: 'uppercase',
     transition: '0.3s',
     fontFamily: 'Roboto',
     color: theme.palette.action.text,
-    fontSize: '1.1rem',
-    lineHeight: '1rem',
+    fontSize: '.9rem',
+    lineHeight: '.8rem',
     zIndex: theme.zIndex.appBar + 20,
     '&:hover': {
       color: theme.palette.action.textHover

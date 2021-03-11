@@ -37,6 +37,7 @@ const Final: React.FC = () => {
           className={classes.logoImage}
           src="/images/LogoBeBride3hand.png"
           alt="logo BeBride"
+          layout="intrinsic"
           width="450px"
           height="200px"
         />

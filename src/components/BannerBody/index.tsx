@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Box from '@material-ui/core/Box';
-
+import Image from 'next/image';
 import { useStyles } from './styles';
 
 const BannerBody: React.FC = () => {
@@ -14,7 +14,13 @@ const BannerBody: React.FC = () => {
         <span className={classes.descrBebride}>ASSESSORIA E CERIMONIAL</span>
       </Box>
       <Box className={classes.containerLogo}>
-        <img className={classes.logoImage} src="/images/love.svg" />
+        <Image
+          className={classes.logoImage}
+          src="/images/love.svg"
+          layout="intrinsic"
+          width="510px"
+          height="317px"
+        />
       </Box>
     </Box>
   );

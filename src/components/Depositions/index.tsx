@@ -27,6 +27,7 @@ function Depositions({ depositionItens }: Props) {
                     className={classes.image}
                     src={`/images/deposition_${list.id}.jpeg`}
                     alt="depositions"
+                    layout="intrinsic"
                     width={600}
                     height={400}
                   />

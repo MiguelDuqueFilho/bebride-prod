@@ -38,9 +38,9 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     paddingTop: '2rem',
     paddingBottom: '2rem',
     [theme.breakpoints.down('md')]: {
-      width: '45%'
+      width: '30%'
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '90%'
     }
   },
@@ -51,7 +51,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   image: {
     borderRadius: '12px',
-    maxWidth: '100%'
+    alignSelf: 'center'
   },
   cardBody: {
     padding: '1rem 1rem'

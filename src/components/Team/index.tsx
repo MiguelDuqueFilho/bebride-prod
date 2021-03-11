@@ -1,5 +1,6 @@
 import { useStyles } from './styles';
 import Box from '@material-ui/core/Box';
+import Image from 'next/image';
 import Favorite from '@material-ui/icons/Favorite';
 
 const Team: React.FC = () => {
@@ -17,10 +18,13 @@ const Team: React.FC = () => {
         </Box>
         <Box className={classes.containerTeam}>
           <Box className={classes.containerTeamImag}>
-            <img
+            <Image
               className={classes.imageTeam}
               src="/images/team-bebride.png"
               alt="team"
+              layout="intrinsic"
+              width="500px"
+              height="350px"
             />
           </Box>
           <Box className={classes.containerTeamText}>

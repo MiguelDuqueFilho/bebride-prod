@@ -2,9 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { url } from 'node:inspector';
 import { Itheme } from '../../theme';
 
-// import imgCatLi from '/images/cat_li.png';
-// import imgFootBg from '/images/foot_bg.jpg';
-
 export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
     display: 'flex',

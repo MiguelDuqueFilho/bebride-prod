@@ -2,7 +2,7 @@ import React from 'react';
 import { useStyles } from './styles';
 
 import Box from '@material-ui/core/Box';
-
+import Image from 'next/image';
 import Favorite from '@material-ui/icons/Favorite';
 import ViewList from '@material-ui/icons/ViewList';
 import AccountTree from '@material-ui/icons/AccountTree';
@@ -59,10 +59,13 @@ const Why: React.FC = () => {
           </p>
         </Box>
         <Box className={classes.containerTeam2Imag}>
-          <img
+          <Image
             className={classes.imageTeam2}
             src="/images/team-adesivo.png"
             alt="team"
+            layout="intrinsic"
+            width="350px"
+            height="500px"
           />
         </Box>
       </Box>
