@@ -4,7 +4,6 @@ import { Itheme } from '../../theme';
 export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
     position: 'relative',
-    backgroundColor: theme.palette.common.white,
     width: '100vw',
     height: '100%',
     transition: '1.8s ease-in-out',

@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   iconLight: {
     position: 'absolute',
-    top: '0.5rem',
+    top: '0.95rem',
     left: 'calc(100vw - 0.5rem - 60px)',
     width: '25px',
     height: '25px',
@@ -24,18 +24,18 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
-      backgroundColor: theme.palette.secondary.dark,
-      color: theme.palette.action.text,
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.text.secondary,
       '&:hover': {
         transition: '0.4s',
-        color: theme.palette.action.textHover
+        color: theme.palette.secondary.contrastText
       }
     }
   },
   iconLightDark: {
     position: 'absolute',
-    top: '0.5rem',
-    left: 'calc(100vw - 0.5rem - 60px)',
+    top: '0.95rem',
+    left: 'calc(100vw - 0.5rem - 25px)',
     width: '25px',
     height: '25px',
     borderRadius: '50%',
@@ -49,10 +49,10 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
       backgroundColor: theme.palette.secondary.dark,
-      color: theme.palette.action.text,
+      color: theme.palette.secondary.contrastText,
       '&:hover': {
         transition: '0.4s',
-        color: theme.palette.action.textHover
+        backgroundColor: theme.palette.secondary.light
       }
     }
   }

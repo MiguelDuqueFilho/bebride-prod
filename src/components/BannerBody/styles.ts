@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     fontFamily: 'romantisch',
     fontSize: '8em',
     marginBottom: '-20px',
-    color: theme.palette.primary.main,
+    color: theme.palette.background.bebride,
     [theme.breakpoints.down('md')]: {
       width: '100vw',
       fontSize: '5rem',
@@ -46,7 +46,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   descrBebride: {
     fontSize: '1.5em',
     fontStyle: 'normal',
-    // fontWeight: '600',
+    fontWeight: 600,
     lineHeight: '40px',
     letterSpacing: '0.13em',
     textAlign: 'left',
@@ -62,7 +62,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     display: 'flex',
 
     borderRadius: '0 0 0 40vw',
-    background: theme.palette.background.mainGradient,
+    background: theme.palette.background.gradient,
 
     [theme.breakpoints.down('md')]: {
       width: '100vw',

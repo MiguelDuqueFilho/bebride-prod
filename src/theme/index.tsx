@@ -5,6 +5,10 @@ import { defaultSettings } from '../contexts/SettingsContext';
 const themesOptions = [
   {
     name: THEMES.LIGHT,
+    typography: {
+      fontFamily: 'Cormorant Garamond, romantisch, Roboto',
+      subTitle: { fontSize: 12 }
+    },
     palette: {
       action: {
         active: '#644fba', // ok
@@ -19,22 +23,30 @@ const themesOptions = [
       },
 
       background: {
-        light: '#a598d7',
         default: '#fafafa',
-        dark: '#7a6ab9',
         paper: '#fff',
-        mainGradient: 'linear-gradient(to right, #d2cbeb, #7a6ab9)'
+        bebride: '#c7bfe6',
+        gradienteStart: 'a195d5',
+        gradienteEnd: 'e9e5f5',
+        gradient:
+          'linear-gradient(to right, #a195d5 0%, #c7bfe6 52%, #e9e5f5 100%)'
+      },
+      text: {
+        primary: 'rgba(0,0,0,0.9)',
+        secondary: 'rgba(255,255,255,0.70)',
+        disabled: 'rgba(0,0,0,0.38)',
+        hint: 'rgba(0,0,0,0.38)'
       },
       primary: {
-        light: '#d2cbeb',
+        light: '#faf2ff',
         main: '#c7bfe6',
-        dark: '#8b85a1',
-        contrastText: '#fff'
+        dark: '#968fb4',
+        contrastText: '#000'
       },
       secondary: {
-        light: '#958bfc',
-        main: '#7167e4',
-        dark: '#533fa2',
+        light: '#856bd4',
+        main: '#533fa2',
+        dark: '#1e1772',
         contrastText: '#fff'
       },
       error: {
@@ -60,14 +72,6 @@ const themesOptions = [
         main: '#4caf50',
         dark: '#388e3c',
         contrastText: '#fff'
-      },
-      text: {
-        primary: 'rgba(0,0,0,0.87)',
-        secondary: 'rgba(0,0,0,0.54)',
-        disabled: 'rgba(0,0,0,0.38)',
-        hint: 'rgba(0,0,0,0.38)',
-        normal: '#f8f9fa',
-        light: '#757575'
       }
     },
 
@@ -105,7 +109,10 @@ const themesOptions = [
   },
   {
     name: THEMES.DARK,
-
+    typography: {
+      fontFamily: 'Cormorant Garamond, romantisch, Roboto',
+      subTitle: { fontSize: 12 }
+    },
     palette: {
       action: {
         active: '#fff', // ok
@@ -119,22 +126,30 @@ const themesOptions = [
         linkHover: '#ff7e20'
       },
       background: {
-        default: '#282C34',
-        light: '#a598d7',
-        dark: '#7a6ab9',
-        paper: '#282C34',
-        mainGradient: 'linear-gradient(to right, #282C34, #7a6ab9)'
+        default: '#202020',
+        paper: '#1e1e1e',
+        bebride: '#c7bfe6',
+        gradient:
+          'linear-gradient(to right, #545353 0%, #202020 52%, #1e1e1e 100%)'
+      },
+      text: {
+        primary: '#ffffff',
+        secondary: '#d0d3e1',
+        disabled: '#e6e5e8',
+        hint: '#e6e5e8',
+        normal: '#f8f9fa',
+        light: '#757575'
       },
       primary: {
-        main: '#8a85ff',
-        light: '#f9f1ff',
-        dark: '#533fa2',
-        contrastText: '#000'
+        light: '#3f3f3f',
+        main: '#202020',
+        dark: '#000',
+        contrastText: '#fff'
       },
       secondary: {
-        light: '#958bfc',
-        main: '#7167e4',
-        dark: '#533fa2',
+        light: '#856bd4',
+        main: '#533fa2',
+        dark: '#1e1772',
         contrastText: '#fff'
       },
       error: {
@@ -160,14 +175,6 @@ const themesOptions = [
         main: '#4caf50',
         dark: '#388e3c',
         contrastText: '#fff'
-      },
-      text: {
-        primary: '#ffffff',
-        secondary: '#d0d3e1',
-        disabled: '#e6e5e8',
-        hint: '#e6e5e8',
-        normal: '#f8f9fa',
-        light: '#757575'
       }
     },
     // styled-componentes

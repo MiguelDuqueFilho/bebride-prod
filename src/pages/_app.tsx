@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import { Provider } from 'next-auth/client';
+import { Provider } from 'next-auth/client';
 
 import { Router } from 'next/dist/client/router';
 
@@ -27,14 +27,14 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      {/* <Provider session={pageProps.session}> */}
-      <SettingsProvider settings={defaultSettings}>
-        <MyThemeProvider>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </MyThemeProvider>
-      </SettingsProvider>
-      {/* </Provider> */}
+      <Provider session={pageProps.session}>
+        <SettingsProvider settings={defaultSettings}>
+          <MyThemeProvider>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </MyThemeProvider>
+        </SettingsProvider>
+      </Provider>
     </>
   );
 };

@@ -38,7 +38,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     }
   },
   containerWhyText: {
-    color: theme.palette.text.primary,
+    color: theme.palette.background.bebride,
     textAlign: 'justify',
     fontSize: '1.5em',
     // margin: '1rem',
@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     margin: '2rem 6rem',
     fontSize: '1.6em',
     lineHeight: '1.5em',
-    color: theme.palette.primary.main,
+    color: theme.palette.background.bebride,
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.6em',
@@ -76,7 +76,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     margin: '1rem 2rem',
     fontSize: '1.3rem',
     textAlign: 'center',
-    color: theme.palette.text.primary
+    color: theme.palette.background.bebride
   },
   containerWhyDescr: {
     color: theme.palette.text.primary,
@@ -84,7 +84,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     margin: '1rem'
   },
   icon: {
-    color: theme.palette.primary.main,
+    color: theme.palette.background.bebride,
     marginRight: '2rem',
     fontSize: '1.3em'
   },

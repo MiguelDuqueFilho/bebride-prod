@@ -9,7 +9,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     padding: '2rem 0',
-    backgroundColor: theme.palette.common.black
+    backgroundColor: theme.palette.grey[900],
+    fontFamily: 'Roboto'
   },
   footerWrap: {
     position: 'relative',
@@ -41,14 +42,14 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   liA: {
     textDecoration: 'none',
-    color: theme.palette.text.light,
+    color: theme.palette.grey[600],
 
     '&:hover': {
       color: theme.palette.action.linkHover
     }
   },
   liP: {
-    color: theme.palette.text.light
+    color: theme.palette.grey[200]
   },
   foot: {
     fontSize: '14px',
@@ -63,16 +64,16 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     padding: '35px 0'
   },
   footA: {
-    color: theme.palette.text.light
+    color: theme.palette.grey[200]
   },
   footerTitle: {
-    color: theme.palette.text.normal,
+    color: theme.palette.grey[100],
     fontSize: '24px',
     padding: '0 0 18px 0',
     display: 'block'
   },
   fTitleA: {
-    color: theme.palette.text.light,
+    color: theme.palette.grey[200],
     '&:hover': {
       textdecoration: 'none'
     }

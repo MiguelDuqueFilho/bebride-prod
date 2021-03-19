@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     margin: '2rem 6rem',
     fontSize: '1.6em',
     lineHeight: '1.5em',
-    color: theme.palette.primary.main,
+    color: theme.palette.background.bebride,
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.6em',

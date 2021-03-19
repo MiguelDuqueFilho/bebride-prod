@@ -63,17 +63,14 @@ export const useStyles = makeStyles((theme: Itheme) => ({
 
   socialIcon: {
     textDecoration: 'none',
-    transition: '0.3s',
-    color: theme.palette.action.active,
-    '&:hover': {
-      color: theme.palette.action.hover
-    }
+    transition: '0.3s'
   },
   icon: {
-    color: theme.palette.action.active,
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.secondary.dark,
     fontSize: '2.5em',
     '&:hover': {
-      color: theme.palette.action.hover
+      color: theme.palette.secondary.light
     }
   },
   logoImage: {

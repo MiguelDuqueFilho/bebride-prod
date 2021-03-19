@@ -1,7 +1,5 @@
 import { GetStaticProps } from 'next';
 
-// import {} from '../styles/home/styles';
-
 import {
   PlanType,
   PlanTypes,

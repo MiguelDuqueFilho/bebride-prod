@@ -17,7 +17,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   myMenuIcon: {
     position: 'absolute',
-    top: '0.5rem',
+    top: '0.95rem',
     left: '0.5rem',
     width: '25px',
     height: '25px',
@@ -30,10 +30,10 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
       backgroundColor: theme.palette.secondary.dark,
-      color: theme.palette.action.text,
+      color: theme.palette.secondary.contrastText,
       '&:hover': {
         transition: '0.4s',
-        color: theme.palette.action.textHover
+        backgroundColor: theme.palette.secondary.light
       }
     }
   },
@@ -54,11 +54,12 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   menuItens: {
     position: 'absolute',
     top: '0',
-    height: '40px',
+    height: '56px',
     width: '100vw',
 
     [theme.breakpoints.up('md')]: {
-      backgroundColor: theme.palette.secondary.dark
+      backgroundImage: theme.palette.background.gradient,
+      opacity: '0.7'
     },
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
@@ -69,7 +70,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       left: '50%',
       transform: 'translateX(-150%) translateY(-50%)',
       webkitTransform: 'translate3d(-150%, -50%, 0)',
-      backgroundColor: theme.palette.background.dark,
+      backgroundImage: theme.palette.background.gradient,
 
       transition: '1.5s',
       display: 'flex',
@@ -77,7 +78,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       alignItems: 'center',
       '&.checked': {
         transform: 'translateX(-50%) translateY(-50%)',
-        webkitTransform: 'translate3d(-50%, -50%, 0)'
+        webkitTransform: 'translate3d(-50%, -50%, 0)',
+        opacity: '1'
       }
     }
   },
@@ -120,17 +122,17 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   a: {
     textDecoration: 'none',
-    margin: '0.2rem',
+    margin: '0.7rem',
     display: 'inline-block',
     // textTransform: 'uppercase',
     transition: '0.3s',
-    fontFamily: 'Roboto',
-    color: theme.palette.action.text,
-    fontSize: '.9rem',
+    fontWeight: 900,
+    color: theme.palette.primary.contrastText,
+    fontSize: '1.2rem',
     lineHeight: '.8rem',
     zIndex: theme.zIndex.appBar + 20,
     '&:hover': {
-      color: theme.palette.action.textHover
+      color: theme.palette.secondary.contrastText
     }
   }
 }));
