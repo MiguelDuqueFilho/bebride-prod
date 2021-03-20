@@ -1,11 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { callbackify } from 'node:util';
+import { Height } from '@material-ui/icons';
 import { Itheme } from '../../theme';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
     position: 'relative',
-    width: '100%',
+    width: '100vw',
     minHeight: '100vh',
     overflow: 'hidden',
     background: theme.palette.background.default,
@@ -93,6 +93,9 @@ export const useStyles = makeStyles((theme: Itheme) => ({
         transform: 'translate(-50%, 0)',
         left: '50%'
       }
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '65%'
     }
   },
   form: {
@@ -106,7 +109,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     gridColumn: '1 / 2',
     gridRow: '1 / 2',
     [theme.breakpoints.down('sm')]: {
-      padding: '0 1.5rem'
+      padding: '0.5rem 1.5rem'
     }
   },
   formSignin: {
@@ -133,7 +136,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   inputField: {
     maxWidth: '380px',
     width: '100%',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: theme.palette.background.field,
     height: '55px',
     margin: '10px 0',
     borderRadius: '55px',
@@ -153,13 +156,17 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     outline: 'none',
     border: 'none',
     lineHeight: '1',
-    fontWeight: 600,
+    fontWeight: 700,
     fontSize: '1.1rem',
-    color: '#333',
+    color: theme.palette.text.secondary,
     '::placeholder': {
       color: '#aaa',
       fontWeight: 500
     }
+  },
+  inputErrors: {
+    // marginTop: '-3%',
+    color: theme.palette.error.main
   },
   button: {
     width: '150px',
@@ -184,7 +191,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     // herda de button
     margin: '0',
     background: 'none',
-    border: `2px solid ${theme.palette.secondary.dark}`,
+    border: `2px solid ${theme.palette.primary.light}`,
     color: theme.palette.primary.contrastText,
     width: '130px',
     height: '41px',
@@ -292,7 +299,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       transitionDelay: '0.6s'
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '2.5rem 1rem'
+      padding: '2rem 1rem ',
+      Height: '90vh'
     },
     '& > h3': {
       fontWeight: 600,

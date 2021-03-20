@@ -54,7 +54,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   foot: {
     fontSize: '14px',
     background: 'url("/images/foot_bg.jpg") repeat',
-    color: theme.palette.text.light,
+    color: theme.palette.grey[400],
     textTransform: 'uppercase',
     position: 'relative'
   },

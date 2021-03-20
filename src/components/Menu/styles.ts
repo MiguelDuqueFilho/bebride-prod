@@ -29,11 +29,11 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&.checked': {
       opacity: '1',
       zIndex: theme.zIndex.appBar + 19,
-      backgroundColor: theme.palette.secondary.dark,
-      color: theme.palette.secondary.contrastText,
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.primary.contrastText,
       '&:hover': {
         transition: '0.4s',
-        backgroundColor: theme.palette.secondary.light
+        backgroundColor: theme.palette.primary.light
       }
     }
   },

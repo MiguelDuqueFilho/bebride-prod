@@ -23,17 +23,18 @@ const themesOptions = [
       },
 
       background: {
-        default: '#fafafa',
+        default: '#fafafa', // uso no background input
         paper: '#fff',
+        field: '#f0f0f0',
         bebride: '#c7bfe6',
         gradienteStart: 'a195d5',
         gradienteEnd: 'e9e5f5',
         gradient:
-          'linear-gradient(to right, #a195d5 0%, #c7bfe6 52%, #e9e5f5 100%)'
+          'linear-gradient(to right, #a195d5 0%, #c7bfe6 70%, #e9e5f5 100%)'
       },
       text: {
-        primary: 'rgba(0,0,0,0.9)',
-        secondary: 'rgba(255,255,255,0.70)',
+        primary: 'rgba(0,0,0,0.9)', // uso input text
+        secondary: 'rgba(0,0,0,0.60)', // uso label input
         disabled: 'rgba(0,0,0,0.38)',
         hint: 'rgba(0,0,0,0.38)'
       },
@@ -128,9 +129,10 @@ const themesOptions = [
       background: {
         default: '#202020',
         paper: '#1e1e1e',
+        field: '#2e2e2e',
         bebride: '#c7bfe6',
         gradient:
-          'linear-gradient(to right, #545353 0%, #202020 52%, #1e1e1e 100%)'
+          'linear-gradient(to right, #545353 0%, #202020 70%, #1e1e1e 100%)'
       },
       text: {
         primary: '#ffffff',

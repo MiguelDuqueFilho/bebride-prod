@@ -1,12 +1,12 @@
 import { FormEvent, useState } from 'react';
 import { signIn } from 'next-auth/client';
-import Image from 'next/image';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+
+import { Form, Formik, Field } from 'formik';
+import * as yup from 'yup';
+import { Box, InputBase } from '@material-ui/core';
 
 import LayoutSite from '../../components/LayoutSite';
 import { AppProps } from 'next/app';
-
 import { useStyles } from './styles';
 
 import {
@@ -17,6 +17,55 @@ import {
   FaGoogle,
   FaEnvelope
 } from 'react-icons/fa';
+
+export interface valuesLogin {
+  userEmail: string;
+  password: string;
+  isNewUser: boolean;
+}
+
+const initialValuesLogin: valuesLogin = {
+  userEmail: '',
+  password: '',
+  isNewUser: false
+};
+
+const validationLogin = yup.object({
+  userEmail: yup
+    .string()
+    .email('Entre com um E-mail válido')
+    .required('E-mail é obrigatório'),
+  password: yup
+    .string()
+    .min(8, 'Senha deve ter no minimo 8 caracteres de tamanho')
+    .required('Senha é obrigatória')
+});
+
+export interface valuesRegister {
+  userName: String;
+  userEmail: string;
+  password: string;
+  isNewUser: boolean;
+}
+
+const initialValuesRegister: valuesRegister = {
+  userName: '',
+  userEmail: '',
+  password: '',
+  isNewUser: true
+};
+
+const validationRegister = yup.object({
+  userName: yup.string().required('Nome é obrigatório'),
+  userEmail: yup
+    .string()
+    .email('Entre com um E-mail válido')
+    .required('E-mail é obrigatório'),
+  password: yup
+    .string()
+    .min(8, 'Senha deve ter no minimo 8 caracteres de tamanho')
+    .required('Senha é obrigatória')
+});
 
 // export interface SignInResponse {
 //   /** The reason for why the login process has stopped */
@@ -31,9 +80,6 @@ export default function LogInOut(props: AppProps) {
   const classes = useStyles();
 
   const [mode, setMode] = useState('');
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleClickRegister = () => {
     setMode('sign-up-mode');
@@ -43,67 +89,24 @@ export default function LogInOut(props: AppProps) {
     setMode('');
   };
 
-  async function onSubmitSignIn(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('credentials', { userEmail, password, isNewUser: false });
-    // const response: SignInResponse = await signIn('credentials', {
-    //   userEmail,
-    //   password,
-    //   isNewUser: false,
-    //   redirect: false
-    // });
-    // console.log(response);
+  async function onSubmitSignIn(values: valuesLogin) {
+    await signIn('credentials', values);
   }
 
-  function onFacebookSignIn(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
+  async function onSubmitSignUp(values: valuesRegister) {
+    await signIn('credentials', values);
+  }
+
+  function onFacebookSignIn() {
     signIn('facebook');
   }
 
-  function onTwitterSignIn(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('twitter', { userEmail });
+  function onTwitterSignIn() {
+    signIn('twitter');
   }
 
-  function onGoogleSignIn(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('google', { userEmail, isNewUser: false });
-  }
-
-  function onSubmitSignUp(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('credentials', { userName, userEmail, password, isNewUser: true });
-  }
-
-  function onFacebookSignUp(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('facebook');
-  }
-
-  function onTwitterSignUp(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('twitter', { userEmail, isNewUser: true });
-  }
-
-  function onGoogleSignUp(e: FormEvent) {
-    e.preventDefault();
-    console.log('onSubmit');
-    console.log(e);
-    signIn('google', { userEmail, isNewUser: true });
+  function onGoogleSignIn() {
+    signIn('google');
   }
 
   return (
@@ -111,129 +114,169 @@ export default function LogInOut(props: AppProps) {
       <Box className={`${classes.container} ${mode}`}>
         <Box className={classes.formContainer}>
           <Box className={`${classes.signinSignUp} ${mode}`}>
-            <form
-              method="post"
-              onSubmit={onSubmitSignIn}
-              className={`${classes.form} ${classes.formSignin} ${mode}`}
+            <Formik
+              initialValues={initialValuesLogin}
+              validationSchema={validationLogin}
+              onSubmit={values => {
+                onSubmitSignIn(values);
+              }}
             >
-              <h2 className={classes.title}>Login</h2>
-              {/* <input name="csrfToken" type="hidden" defaultValue={csrfToken} /> */}
-              <input
-                type="hidden"
-                name="isNewUser"
-                value={0}
-                className={classes.input}
-              />
-              <Box className={classes.inputField}>
-                <i className={classes.containerIcon}>
-                  <FaUser />
-                </i>
-                <input
-                  className={classes.input}
-                  name="userEmail"
-                  type="email"
-                  placeholder="Usuário"
-                  onChange={e => setUserEmail(e.target.value)}
-                />
-              </Box>
-              <Box className={classes.inputField}>
-                <i className={classes.containerIcon}>
-                  <FaLock />
-                </i>
-                <input
-                  className={classes.input}
-                  name="password"
-                  type="password"
-                  placeholder="Senha"
-                  onChange={e => setPassword(e.target.value)}
-                />
-              </Box>
-              <button type="submit" className={`${classes.button} btn solid`}>
-                Login
-              </button>
-              <p className={classes.socialText}>
-                ou Login com plataforma de mídia social
-              </p>
-              <p className={classes.socialMedia}>
-                <i onClick={onFacebookSignIn} className={classes.socialMedia}>
-                  <FaFacebook className={classes.socialIcon} />
-                </i>
-                <i onClick={onTwitterSignIn} className={classes.socialMedia}>
-                  <FaTwitter className={classes.socialIcon} />
-                </i>
-                <i onClick={onGoogleSignIn} className={classes.socialMedia}>
-                  <FaGoogle className={classes.socialIcon} />
-                </i>
-              </p>
-            </form>
-            <form
-              method="post"
-              onSubmit={onSubmitSignUp}
-              className={`${classes.form} ${classes.formSignup} ${mode}`}
+              {({ values, errors, touched }) => (
+                <Form
+                  className={`${classes.form} ${classes.formSignin} ${mode}`}
+                >
+                  <h2 className={classes.title}>Login</h2>
+                  {/* <input name="csrfToken" type="hidden" defaultValue={csrfToken} /> */}
+                  <Field
+                    type="hidden"
+                    name="isNewUser"
+                    value={false}
+                    className={classes.input}
+                  />
+                  <Box className={classes.inputField}>
+                    <i className={classes.containerIcon}>
+                      <FaEnvelope />
+                    </i>
+                    <Field
+                      name="userEmail"
+                      type="email"
+                      as={InputBase}
+                      margin="normal"
+                      label="Usuário"
+                      placeholder="Usuário"
+                      className={classes.input}
+                    />
+                  </Box>
+                  <Box className={classes.inputErrors}>
+                    {touched.userEmail && errors.userEmail && errors.userEmail}
+                  </Box>
+                  <Box className={classes.inputField}>
+                    <i className={classes.containerIcon}>
+                      <FaLock />
+                    </i>
+                    <Field
+                      name="password"
+                      type="password"
+                      as={InputBase}
+                      margin="normal"
+                      label="Senha"
+                      placeholder="Senha"
+                      className={classes.input}
+                    />
+                  </Box>
+                  <Box className={classes.inputErrors}>
+                    {touched.password && errors.password && errors.password}
+                  </Box>
+                  <button
+                    type="submit"
+                    className={`${classes.button} btn solid`}
+                  >
+                    Login
+                  </button>
+                  <p className={classes.socialText}>
+                    ou Login com plataforma de mídia social
+                  </p>
+                  <p className={classes.socialMedia}>
+                    <i
+                      onClick={onFacebookSignIn}
+                      className={classes.socialMedia}
+                    >
+                      <FaFacebook className={classes.socialIcon} />
+                    </i>
+                    <i
+                      onClick={onTwitterSignIn}
+                      className={classes.socialMedia}
+                    >
+                      <FaTwitter className={classes.socialIcon} />
+                    </i>
+                    <i onClick={onGoogleSignIn} className={classes.socialMedia}>
+                      <FaGoogle className={classes.socialIcon} />
+                    </i>
+                  </p>
+                  {/* <pre>{JSON.stringify(errors, null, 4)}</pre> */}
+                  {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
+                </Form>
+              )}
+            </Formik>
+            <Formik
+              initialValues={initialValuesRegister}
+              validationSchema={validationRegister}
+              onSubmit={values => {
+                onSubmitSignUp(values);
+              }}
             >
-              <h2 className={classes.title}>Registrar</h2>
-              <input
-                type="hidden"
-                name="isNewUser"
-                value={1}
-                className={classes.input}
-              />
-              <Box className={classes.inputField}>
-                <i className={classes.containerIcon}>
-                  <FaUser />
-                </i>
-                <input
-                  className={classes.input}
-                  name="userName"
-                  type="text"
-                  placeholder="Usuário"
-                  onChange={e => setUserName(e.target.value)}
-                />
-              </Box>
-              <Box className={classes.inputField}>
-                <i className={classes.containerIcon}>
-                  <FaEnvelope />
-                </i>
-                <input
-                  className={classes.input}
-                  name="userEmail"
-                  type="email"
-                  placeholder="Email"
-                  onChange={e => setUserEmail(e.target.value)}
-                />
-              </Box>
-              <Box className={classes.inputField}>
-                <i className={classes.containerIcon}>
-                  <FaLock />
-                </i>
-                <input
-                  className={classes.input}
-                  name="password"
-                  type="password"
-                  placeholder="Senha"
-                  onChange={e => setPassword(e.target.value)}
-                />
-              </Box>
-              <input
-                type="submit"
-                value="SignUp"
-                className={`${classes.button} btn`}
-              />
-              {/* <SocialText>
-                ou Registre com plataforma de mídia social
-              </SocialText>
-              <SocialMedia className="social-media">
-                <SocialIcon onClick={onFacebookSignUp} className="social-icon">
-                  <FaFacebook />
-                </SocialIcon>
-                <SocialIcon onClick={onTwitterSignUp} className="social-icon">
-                  <FaTwitter />
-                </SocialIcon>
-                <SocialIcon onClick={onGoogleSignUp} className="social-icon">
-                  <FaGoogle />
-                </SocialIcon>
-              </SocialMedia> */}
-            </form>
+              {({ values, errors, touched }) => (
+                <Form
+                  className={`${classes.form} ${classes.formSignup} ${mode}`}
+                >
+                  <h2 className={classes.title}>Registrar</h2>
+                  <Field
+                    type="hidden"
+                    name="isNewUser"
+                    value={false}
+                    className={classes.input}
+                  />
+                  <Box className={classes.inputField}>
+                    <i className={classes.containerIcon}>
+                      <FaUser />
+                    </i>
+                    <Field
+                      name="userName"
+                      type="text"
+                      as={InputBase}
+                      margin="normal"
+                      label="Usuário"
+                      placeholder="Usuário"
+                      className={classes.input}
+                    />
+                  </Box>
+                  <Box className={classes.inputErrors}>
+                    {touched.userName && errors.userName && errors.userName}
+                  </Box>
+                  <Box className={classes.inputField}>
+                    <i className={classes.containerIcon}>
+                      <FaEnvelope />
+                    </i>
+                    <Field
+                      name="userEmail"
+                      type="email"
+                      as={InputBase}
+                      margin="normal"
+                      label="E-mail"
+                      placeholder="E-mail"
+                      className={classes.input}
+                    />
+                  </Box>
+                  <Box className={classes.inputErrors}>
+                    {touched.userEmail && errors.userEmail && errors.userEmail}
+                  </Box>
+                  <Box className={classes.inputField}>
+                    <i className={classes.containerIcon}>
+                      <FaLock />
+                    </i>
+                    <Field
+                      name="password"
+                      type="password"
+                      as={InputBase}
+                      margin="normal"
+                      label="Senha"
+                      placeholder="Senha"
+                      className={classes.input}
+                    />
+                  </Box>
+                  <Box className={classes.inputErrors}>
+                    {touched.password && errors.password && errors.password}
+                  </Box>
+                  <input
+                    type="submit"
+                    value="SignUp"
+                    className={`${classes.button} btn`}
+                  />
+                  {/* {<pre>{JSON.stringify(errors, null, 4)}</pre>}
+                  {<pre>{JSON.stringify(values, null, 4)}</pre>} */}
+                </Form>
+              )}
+            </Formik>
           </Box>
         </Box>
         <Box className={classes.panelsContainer}>
