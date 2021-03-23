@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   iconLight: {
     position: 'absolute',
     top: '0.95rem',
-    left: 'calc(100vw - 0.5rem - 60px)',
+    left: 'calc(100vw - 1rem - 60px)',
     width: '25px',
     height: '25px',
     borderRadius: '50%',
@@ -35,7 +35,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   iconLightDark: {
     position: 'absolute',
     top: '0.95rem',
-    left: 'calc(100vw - 0.5rem - 25px)',
+    left: 'calc(100vw - 1rem - 25px)',
     width: '25px',
     height: '25px',
     borderRadius: '50%',

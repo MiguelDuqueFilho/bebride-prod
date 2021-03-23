@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { signIn } from 'next-auth/client';
 
 import { Form, Formik, Field } from 'formik';
@@ -6,8 +6,7 @@ import * as yup from 'yup';
 import { Box, InputBase } from '@material-ui/core';
 
 import LayoutSite from '../../components/LayoutSite';
-import { AppProps } from 'next/app';
-import { useStyles } from './styles';
+import { useStyles } from '../../styles/loginout/styles';
 
 import {
   FaUser,
@@ -18,13 +17,13 @@ import {
   FaEnvelope
 } from 'react-icons/fa';
 
-export interface valuesLogin {
+interface ValuesLogin {
   userEmail: string;
   password: string;
   isNewUser: boolean;
 }
 
-const initialValuesLogin: valuesLogin = {
+const initialValuesLogin: ValuesLogin = {
   userEmail: '',
   password: '',
   isNewUser: false
@@ -41,14 +40,14 @@ const validationLogin = yup.object({
     .required('Senha é obrigatória')
 });
 
-export interface valuesRegister {
+interface ValuesRegister {
   userName: String;
   userEmail: string;
   password: string;
   isNewUser: boolean;
 }
 
-const initialValuesRegister: valuesRegister = {
+const initialValuesRegister: ValuesRegister = {
   userName: '',
   userEmail: '',
   password: '',
@@ -67,16 +66,7 @@ const validationRegister = yup.object({
     .required('Senha é obrigatória')
 });
 
-// export interface SignInResponse {
-//   /** The reason for why the login process has stopped */
-//   error: string | null;
-//   /** @see https://developer.mozilla.org/en-US/docs/Web/API/Response/status */
-//   status: number;
-//   /** @see https://developer.mozilla.org/en-US/docs/Web/API/Response/ok */
-//   ok: boolean;
-// }
-
-export default function LogInOut(props: AppProps) {
+export default function LogInOut() {
   const classes = useStyles();
 
   const [mode, setMode] = useState('');
@@ -89,12 +79,12 @@ export default function LogInOut(props: AppProps) {
     setMode('');
   };
 
-  async function onSubmitSignIn(values: valuesLogin) {
-    await signIn('credentials', values);
+  function onSubmitSignIn(values: ValuesLogin) {
+    signIn('credentials', values);
   }
 
-  async function onSubmitSignUp(values: valuesRegister) {
-    await signIn('credentials', values);
+  async function onSubmitSignUp(values: ValuesRegister) {
+    signIn('credentials', values);
   }
 
   function onFacebookSignIn() {
@@ -126,7 +116,6 @@ export default function LogInOut(props: AppProps) {
                   className={`${classes.form} ${classes.formSignin} ${mode}`}
                 >
                   <h2 className={classes.title}>Login</h2>
-                  {/* <input name="csrfToken" type="hidden" defaultValue={csrfToken} /> */}
                   <Field
                     type="hidden"
                     name="isNewUser"
@@ -141,9 +130,8 @@ export default function LogInOut(props: AppProps) {
                       name="userEmail"
                       type="email"
                       as={InputBase}
-                      margin="normal"
-                      label="Usuário"
-                      placeholder="Usuário"
+                      label="E-mail"
+                      placeholder="E-mail"
                       className={classes.input}
                     />
                   </Box>
@@ -158,7 +146,6 @@ export default function LogInOut(props: AppProps) {
                       name="password"
                       type="password"
                       as={InputBase}
-                      margin="normal"
                       label="Senha"
                       placeholder="Senha"
                       className={classes.input}
@@ -224,7 +211,6 @@ export default function LogInOut(props: AppProps) {
                       name="userName"
                       type="text"
                       as={InputBase}
-                      margin="normal"
                       label="Usuário"
                       placeholder="Usuário"
                       className={classes.input}
@@ -241,7 +227,6 @@ export default function LogInOut(props: AppProps) {
                       name="userEmail"
                       type="email"
                       as={InputBase}
-                      margin="normal"
                       label="E-mail"
                       placeholder="E-mail"
                       className={classes.input}
@@ -258,7 +243,6 @@ export default function LogInOut(props: AppProps) {
                       name="password"
                       type="password"
                       as={InputBase}
-                      margin="normal"
                       label="Senha"
                       placeholder="Senha"
                       className={classes.input}

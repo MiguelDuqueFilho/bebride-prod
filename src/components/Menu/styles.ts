@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   myMenuIcon: {
     position: 'absolute',
     top: '0.95rem',
-    left: '0.5rem',
+    left: '1rem',
     width: '25px',
     height: '25px',
     borderRadius: '50%',
@@ -134,5 +134,20 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     '&:hover': {
       color: theme.palette.secondary.contrastText
     }
+  },
+  avatarContainer: {
+    position: 'absolute',
+    top: '0.95rem',
+    left: 'calc(100vw - 2rem - 60px)',
+    width: '25px',
+    height: '25px'
+  },
+  avatar: {
+    width: '100%',
+    height: '100%',
+    borderRadius: '50%',
+    border: '0',
+    cursor: 'pointer',
+    zIndex: theme.zIndex.appBar + 20
   }
 }));

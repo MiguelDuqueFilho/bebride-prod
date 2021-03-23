@@ -1,10 +1,8 @@
-import NextAuth from 'next-auth';
+import NextAuth, { InitOptions } from 'next-auth';
 import Providers from 'next-auth/providers';
 import { NextApiHandler } from 'next';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-
-import api from '../../../services/api';
 
 interface userProviders {
   name: string;
@@ -30,19 +28,19 @@ export interface UserCredentialsDB {
   image?: string;
 }
 
-const options = {
+const options: InitOptions = {
   providers: [
     Providers.Facebook({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+      clientId: process.env.FACEBOOK_CLIENT_ID || '',
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET || ''
     }),
     Providers.Google({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientId: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || ''
     }),
     Providers.Twitter({
-      clientId: process.env.TWITCH_CLIENT_ID,
-      clientSecret: process.env.TWITCH_CLIENT_SECRET
+      clientId: process.env.TWITCH_CLIENT_ID || '',
+      clientSecret: process.env.TWITCH_CLIENT_SECRET || ''
     }),
     Providers.Credentials({
       id: 'credentials',
@@ -51,9 +49,10 @@ const options = {
       authorize: async credentials => {
         console.log('authorize: async credentials');
         console.log(credentials);
+        console.log(JSON.stringify(credentials, null, 4));
         const prisma = new PrismaClient();
 
-        let getUser: UserCredentialsDB | null = await prisma.user.findUnique({
+        let getUser = await prisma.user.findUnique({
           where: {
             email: credentials.userEmail
           },
@@ -84,6 +83,8 @@ const options = {
             }
             return next(params);
           });
+          console.log(`data prima create`);
+          console.log(`data prima create`);
 
           const data = await prisma.user.create({
             data: {
@@ -111,7 +112,7 @@ const options = {
 
           const compare = await bcrypt.compare(
             `${credentials.password.trim()}-${credentials.userEmail.trim()}`,
-            getUser.password
+            String(getUser.password)
           );
           console.log(
             `===> authorize credentials.email ${credentials.userEmail} credentials.password ${credentials.password} getUser.password ${getUser.password}`
@@ -130,7 +131,7 @@ const options = {
     })
   ],
 
-  database: null,
+  // database: '',
 
   secret: process.env.NEXTAUTH_SECRET,
 
@@ -332,36 +333,36 @@ const options = {
       }
       console.log('<== jwt: return Promise.resolve(token)');
       return Promise.resolve(token);
-    },
+    }
 
-    events: {
-      /* on successful sign in */
-      signIn: async message => {
-        console.log(`<==> Events Signin ${message}`);
-      },
-      /* on signout */
-      signOut: async message => {
-        console.log(`<==> Events signOut ${message}`);
-      },
-      /* user created */
-      createUser: async message => {
-        console.log(`<==> Events createUser ${message}`);
-      },
-      /* account linked to a user */
-      linkAccount: async message => {
-        console.log(`<==> Events linkAccount ${message}`);
-      },
-      /* session is active */
-      session: async message => {
-        console.log(`<==> Events session ${message}`);
-      },
-      /* error in authentication flow */
-      error: async message => {
-        console.log(`<==> Events error ${message}`);
-      }
-    },
+    // events: {
+    /* on successful sign in */
+    // signIn: async message => {
+    //   console.log(`<==> Events Signin ${message}`);
+    // },
+    /* on signout */
+    // signOut: async message => {
+    //   console.log(`<==> Events signOut ${message}`);
+    // },
+    /* user created */
+    // createUser: async message => {
+    //   console.log(`<==> Events createUser ${message}`);
+    // },
+    /* account linked to a user */
+    // linkAccount: async message => {
+    //   console.log(`<==> Events linkAccount ${message}`);
+    // },
+    /* session is active */
+    // session: async message => {
+    //   console.log(`<==> Events session ${message}`);
+    // },
+    /* error in authentication flow */
+    // error: async message => {
+    //   console.log(`<==> Events error ${message}`);
+    // }
+    // },
 
-    debug: process.env.NODE_ENV === 'development'
+    // debug: process.env.NODE_ENV === 'development'
 
     // true for HTTPS sites / false for HTTP sites
     // useSecureCookies: true,
@@ -375,7 +376,6 @@ const Auth: NextApiHandler = async (req, res) => {
   console.log(req.query);
   console.log('===>>> req: body >>>>>>>>');
   console.log(req.body);
-  console.log(`===>>> res - statusCode:${res.statusCode} url:${req.url}`);
   console.log('===>>> start NextAuth(req, res, options)');
   await NextAuth(req, res, options);
   console.log('===>>> End NextAuth');

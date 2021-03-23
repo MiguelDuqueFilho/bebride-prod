@@ -23,8 +23,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     },
     '&:before > &:filter': {
       progid: `DXImageTransform(
-            startColorstr= "${theme.color.gradientStart}",
-            endColorstr= "${theme.color.gradientEnd}",
+            startColorstr= "${theme.palette.background.gradienteStart}",
+            endColorstr= "${theme.palette.background.gradienteEnd}",
             GradientType=1
           )`
     },
@@ -95,7 +95,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       }
     },
     [theme.breakpoints.down('sm')]: {
-      height: '65%'
+      height: '75%'
     }
   },
   form: {
@@ -254,7 +254,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     alignItems: 'center',
     textAlign: 'center',
     zIndex: theme.zIndex.appBar + 6,
-    pointerEvents: 'all',
+    // pointerEvents: 'all',
     padding: '2rem 17% 2rem 12%',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'row',
@@ -273,7 +273,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       pointerEvents: 'none'
     },
     [theme.breakpoints.down('md')]: {
-      padding: '0rem 17% 5rem 12%',
+      padding: '0rem 17% 0rem 12%',
       gridRow: '1 / 2'
     }
   },
@@ -299,8 +299,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
       transitionDelay: '0.6s'
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '2rem 1rem ',
-      Height: '90vh'
+      padding: '2.5rem 1rem ',
+      Height: '100%'
     },
     '& > h3': {
       fontWeight: 600,

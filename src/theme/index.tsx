@@ -74,38 +74,6 @@ const themesOptions = [
         dark: '#388e3c',
         contrastText: '#fff'
       }
-    },
-
-    // styled-components
-
-    color: {
-      background: '#ffffff',
-      toggle: '#533fa2',
-      primary: '#c7bfe6',
-      section: '#E78F8E',
-      title: '#4d495d',
-      text: '#757575',
-
-      socialText: '#acacac',
-      socialTextHover: '#644fba',
-      gradientStart: '#a598d7',
-      gradientEnd: '#7a6ab9',
-      button: '#7e6cc6',
-      buttonHover: '#644fba',
-      buttonText: '#FAFAFA',
-      boxShadow:
-        '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
-
-      light: '#f8f9fa',
-      white: '#fff',
-      black: '#000',
-
-      backgroundTitle: '#E78F8E',
-      input: '#333',
-      inputIcon: '#acacac',
-      inputBackground: '#f0f0f0',
-      inputPlaceHolder: '#aaa',
-      linkHover: '#ff7e20'
     }
   },
   {
@@ -178,36 +146,6 @@ const themesOptions = [
         dark: '#388e3c',
         contrastText: '#fff'
       }
-    },
-    // styled-componentes
-
-    color: {
-      background: '#000000',
-      toggle: '#2d2255',
-      primary: '#c7bfe6',
-      section: '#E78F8E',
-      title: '#FFFDFF',
-      text: '#FAFAFA',
-      socialText: '#acacac',
-      socialTextHover: '#644fba',
-      gradientStart: '#4b3993',
-      gradientEnd: '#1e1736',
-      button: '#443384',
-      buttonHover: '#644fba',
-      buttonText: '#FAFAFA',
-      boxShadow:
-        '0 16px 24px 2px rgba(255, 255, 255, 0.12), 0 6px 30px 5px rgba(255, 255, 255,  0.10), 0 8px 10px -5px rgba(255, 255, 255,  0.2)',
-
-      light: '#757575',
-      white: '#fff',
-      black: '#000',
-
-      backgroundTitle: '#585566',
-      input: '#333',
-      inputIcon: '#acacac',
-      inputBackground: '#f0f0f0',
-      inputPlaceHolder: '#aaa',
-      linkHover: '#ff7e20'
     }
   }
 ];
@@ -229,6 +167,16 @@ export const createTheme = (config = defaultSettings) => {
   theme.overrides = {
     MuiCssBaseline: {
       '@global': {
+        '*::-webkit-scrollbar': {
+          width: '0.4em'
+        },
+        '*::-webkit-scrollbar-track': {
+          '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+        },
+        '*::-webkit-scrollbar-thumb': {
+          backgroundColor: 'rgba(0,0,0,.1)',
+          outline: '1px solid slategrey'
+        },
         '@font-face': {
           fontFamily: 'romantisch',
           src: `url('/fonts/romantisch/romantisch-Regular.ttf') format('truetype')`,

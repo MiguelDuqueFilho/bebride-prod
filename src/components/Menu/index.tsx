@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSession, signOut } from 'next-auth/client';
 import Link from 'next/link';
 
 import Box from '@material-ui/core/Box';
+import Avatar from '@material-ui/core/Avatar';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import ThemeToggle from '../ThemeToggle';
 import useSettings from '../../hooks/useSettings';
 import { THEMES } from '../../utils/constants';
 import { useStyles } from './styles';
+import AccountAvatar from '../AccountAvatar';
 
 function Menu() {
   const classes = useStyles();
@@ -25,8 +28,6 @@ function Menu() {
   const handeClickMenu = (e: React.MouseEvent) => {
     setToggle(false);
   };
-
-  useEffect(() => {}, [toggle]);
 
   const toggleTheme = () => {
     if (settings.theme === THEMES.LIGHT) {
@@ -71,7 +72,7 @@ function Menu() {
                 </Link>
               </li>
               {session && (
-                <li>
+                <li className={classes.li}>
                   <Link href="/admin">
                     <a className={classes.a} onClick={handeClickMenu}>
                       Área Cliente
@@ -79,41 +80,11 @@ function Menu() {
                   </Link>
                 </li>
               )}
-              {!session && (
-                <li className={classes.li}>
-                  <Link href="/loginout">
-                    <a
-                      className={classes.a}
-                      onClick={e => {
-                        if (toggle) setToggle(false);
-                      }}
-                    >
-                      Login/Registrar
-                    </a>
-                  </Link>
-                </li>
-              )}
-              {session && (
+              {/* {session && (
                 <li className={classes.li}>
                   <a className={classes.a}>{session.user.name}</a>
                 </li>
-              )}
-              {session && (
-                <li className={classes.li}>
-                  <a
-                    className={classes.a}
-                    href={`/api/auth/signout`}
-                    onClick={e => {
-                      e.preventDefault();
-                      if (toggle) setToggle(false);
-                      signOut();
-                    }}
-                  >
-                    Logoff
-                  </a>
-                </li>
-              )}
-
+              )} */}
               <li className={classes.li}>
                 <a className={classes.a} onClick={handeClickMenu} href="#">
                   Contato
@@ -124,6 +95,7 @@ function Menu() {
         </Box>
       </Box>
       <ThemeToggle Theme={toggleTheme} themeTitle={settings.theme} />
+      <AccountAvatar />
     </Box>
   );
 }
