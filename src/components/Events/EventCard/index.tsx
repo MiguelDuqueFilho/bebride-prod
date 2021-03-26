@@ -1,6 +1,6 @@
 import { Box, Typography, Avatar } from '@material-ui/core';
 import { useStyles } from './styles';
-import { EventProps } from '../../../interfaces';
+import { EventProps } from '../../interfaces';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useRouter } from 'next/router';

@@ -38,7 +38,7 @@ function AccountAvatar() {
           />
         )}
         {!session && (
-          <Link href="/loginout">
+          <Link href="/login">
             <AccountCircleIcon className={classes.avatar} />
           </Link>
         )}

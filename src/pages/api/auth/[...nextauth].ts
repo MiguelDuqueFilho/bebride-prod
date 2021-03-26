@@ -47,9 +47,9 @@ const options: InitOptions = {
       name: 'credentials',
       credentials: {},
       authorize: async credentials => {
-        console.log('authorize: async credentials');
-        console.log(credentials);
-        console.log(JSON.stringify(credentials, null, 4));
+        // console.log('authorize: async credentials');
+        // console.log(credentials);
+        // console.log(JSON.stringify(credentials, null, 4));
         const prisma = new PrismaClient();
 
         let getUser = await prisma.user.findUnique({
@@ -65,13 +65,13 @@ const options: InitOptions = {
             image: true
           }
         });
-        console.log('prisma getUser');
-        console.log(getUser);
+        // console.log('prisma getUser');
+        // console.log(getUser);
 
         if (credentials.isNewUser === 'true') {
           if (getUser) {
-            console.log('===> authorize END return Promise.reject(loginout)');
-            return Promise.reject('/loginout');
+            console.log('===> authorize END return Promise.reject(login)');
+            return Promise.reject('/login');
           }
 
           prisma.$use(async (params, next) => {
@@ -103,9 +103,9 @@ const options: InitOptions = {
         } else {
           if (!getUser) {
             console.log(
-              '===> authorize END return Promise.reject(loginout) !getUser'
+              '===> authorize END return Promise.reject(login) !getUser'
             );
-            return Promise.reject('/loginout');
+            return Promise.reject('/login');
           }
 
           credentials.password;
@@ -121,7 +121,7 @@ const options: InitOptions = {
 
           if (!compare) {
             console.log('===> authorize END user or and password error');
-            return Promise.reject('/loginout');
+            return Promise.reject('/login');
           } else {
             console.log('===> authorize END return Promise.resolve(data);');
             return Promise.resolve(getUser);
@@ -244,7 +244,7 @@ const options: InitOptions = {
        * @param  {string} baseUrl  Default base URL of site (can be used as fallback)
        * @return {string}          URL the client will be redirect to
        */
-      console.log(`<==> redirect: async (url=${url}, baseUrl=${baseUrl})`);
+      // console.log(`<==> redirect: async (url=${url}, baseUrl=${baseUrl})`);
 
       return url.startsWith(baseUrl)
         ? Promise.resolve(baseUrl)
@@ -257,12 +257,12 @@ const options: InitOptions = {
        * @param  {object} user     User profile (e.g. user id, name, email)
        * @return {object}          Session that will be returned to the client
        */
-      console.log('==> Callbacks session: async (session, user)');
-      console.log('===>>> session');
-      console.log(session);
-      console.log('===>>> user');
-      console.log(user);
-      console.log('<== Callbacks session : return Promise.resolve(session)');
+      // console.log('==> Callbacks session: async (session, user)');
+      // console.log('===>>> session');
+      // console.log(session);
+      // console.log('===>>> user');
+      // console.log(user);
+      // console.log('<== Callbacks session : return Promise.resolve(session)');
       return Promise.resolve(session);
     },
 
@@ -312,26 +312,26 @@ const options: InitOptions = {
        * @param  {boolean} isNewUser True if new user (only available on sign in)
        * @return {object}          JSON Web Token that will be saved
        */
-      console.log('==> jwt: async (token, user, account, profile, isNewUser)');
-      console.log('===>>> token');
-      console.log(token);
-      console.log('===>>> user');
-      console.log(user);
-      console.log('===>>> account');
-      console.log(account);
-      console.log('===>>> profile');
-      console.log(profile);
-      console.log('===>>> isNewUser');
-      console.log(isNewUser);
+      // console.log('==> jwt: async (token, user, account, profile, isNewUser)');
+      // console.log('===>>> token');
+      // console.log(token);
+      // console.log('===>>> user');
+      // console.log(user);
+      // console.log('===>>> account');
+      // console.log(account);
+      // console.log('===>>> profile');
+      // console.log(profile);
+      // console.log('===>>> isNewUser');
+      // console.log(isNewUser);
 
       const isSignIn = user ? true : false;
       // Add auth_time to token on signin in
       if (isSignIn) {
         token.auth_time = Math.floor(Date.now() / 1000);
-        console.log('===>>> token after update');
-        console.log(token);
+        // console.log('===>>> token after update');
+        // console.log(token);
       }
-      console.log('<== jwt: return Promise.resolve(token)');
+      // console.log('<== jwt: return Promise.resolve(token)');
       return Promise.resolve(token);
     }
 
@@ -370,16 +370,16 @@ const options: InitOptions = {
 };
 
 const Auth: NextApiHandler = async (req, res) => {
-  console.log('==> START [...nextauth] (req, res)');
-  console.log(`===>>> req - method:${req.method} url:${req.url}`);
-  console.log('===>>> req: query >>>>>>>>');
-  console.log(req.query);
-  console.log('===>>> req: body >>>>>>>>');
-  console.log(req.body);
-  console.log('===>>> start NextAuth(req, res, options)');
+  // console.log('==> START [...nextauth] (req, res)');
+  // console.log(`===>>> req - method:${req.method} url:${req.url}`);
+  // console.log('===>>> req: query >>>>>>>>');
+  // console.log(req.query);
+  // console.log('===>>> req: body >>>>>>>>');
+  // console.log(req.body);
+  // console.log('===>>> start NextAuth(req, res, options)');
   await NextAuth(req, res, options);
-  console.log('===>>> End NextAuth');
-  console.log('<== END [...nextauth]');
+  // console.log('===>>> End NextAuth');
+  // console.log('<== END [...nextauth]');
 };
 
 export default Auth;

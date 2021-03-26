@@ -17,8 +17,8 @@ const AccessNotification: React.FC = () => {
         open: true
       });
 
-      console.log('router.query.error');
-      console.log(router.query.error);
+      // console.log('router.query.error');
+      // console.log(router.query.error);
     }
   }, [router]);
 

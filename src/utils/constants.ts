@@ -7,6 +7,8 @@ export const THEMES = {
 export default THEMES;
 
 export const pageSize = 8;
+export const drawerWidth = 240;
+export const menuHeight = 56;
 
 export const defaultAlarm: alarmProps = {
   severity: 'info',

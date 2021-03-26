@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import { Box, InputBase } from '@material-ui/core';
 
 import LayoutSite from '../../components/LayoutSite';
-import { useStyles } from '../../styles/loginout/styles';
+import { useStyles } from '../../styles/login/styles';
 
 import {
   FaUser,
@@ -66,7 +66,7 @@ const validationRegister = yup.object({
     .required('Senha é obrigatória')
 });
 
-export default function LogInOut() {
+export default function LogIn() {
   const classes = useStyles();
 
   const [mode, setMode] = useState('');

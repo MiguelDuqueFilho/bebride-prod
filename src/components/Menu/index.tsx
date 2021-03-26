@@ -7,7 +7,6 @@ import Avatar from '@material-ui/core/Avatar';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import ThemeToggle from '../ThemeToggle';
 import useSettings from '../../hooks/useSettings';

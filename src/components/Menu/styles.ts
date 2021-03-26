@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-
 import { Itheme } from '../../theme';
+import { menuHeight } from '../../utils/constants';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   containerMenu: {
@@ -54,7 +54,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   menuItens: {
     position: 'absolute',
     top: '0',
-    height: '56px',
+    height: `${menuHeight}px`,
     width: '100vw',
 
     [theme.breakpoints.up('md')]: {

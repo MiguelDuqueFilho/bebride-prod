@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Height } from '@material-ui/icons';
 import { Itheme } from '../../theme';
+import { menuHeight } from '../../utils/constants';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   container: {
@@ -236,7 +236,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    top: '56px',
+    top: `${menuHeight}px`,
     left: '0',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',

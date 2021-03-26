@@ -4,7 +4,7 @@ import { Itheme } from '../../theme';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   avatarContainer: {
-    position: 'absolute',
+    position: 'fixed',
     top: '0.95rem',
     left: 'calc(100vw - 2rem - 60px)',
     width: '25px',

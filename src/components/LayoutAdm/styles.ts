@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Itheme } from '../../theme';
-import Toolbar from '@material-ui/core/Toolbar';
-
-const drawerWidth = 240;
+import { menuHeight, drawerWidth } from '../../utils/constants';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   root: {
@@ -32,7 +30,7 @@ export const useStyles = makeStyles((theme: Itheme) => ({
     display: 'none'
   },
   Toolbar: {
-    minHeight: '56px'
+    minHeight: `${menuHeight}px`
   },
   drawer: {
     width: drawerWidth,

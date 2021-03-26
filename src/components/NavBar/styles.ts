@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Itheme } from '../../../theme';
+import { Itheme } from '../../theme';
+import { menuHeight } from '../../utils/constants';
 
 export const useStyles = makeStyles((theme: Itheme) => ({
   mobileDrawer: {
@@ -7,8 +8,8 @@ export const useStyles = makeStyles((theme: Itheme) => ({
   },
   desktopDrawer: {
     width: 240,
-    top: 56,
-    height: 'calc(100% - 56px)',
+    top: `${menuHeight}px`,
+    height: `calc(100% - ${menuHeight}px)`,
     borderRight: 'none'
   },
   avatar: {

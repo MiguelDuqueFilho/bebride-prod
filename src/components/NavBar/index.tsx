@@ -69,9 +69,9 @@ function NavBar() {
                 button
                 className={classes.listItem}
                 selected={isSelected(item)}
-                onClick={() => {
-                  console.log(item);
-                }}
+                // onClick={() => {
+                //   drawerClose();
+                // }}
               >
                 <ListItemIcon
                   className={isSelected(item) ? classes.listItemSelected : ''}

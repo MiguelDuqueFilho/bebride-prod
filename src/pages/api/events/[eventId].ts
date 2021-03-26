@@ -45,15 +45,14 @@ const handler = nextConnect<NextApiRequest, NextApiResponse>()
       });
 
       const data = {
-        title: getEvent.title,
-        content: getEvent.content,
-        status: getEvent.status,
-        image: getEvent.fileLocation,
-        initialDate: getEvent.initialDate,
-        eventDate: getEvent.eventDate,
-        finishDate: getEvent.finishDate
+        title: getEvent?.title,
+        content: getEvent?.content,
+        status: getEvent?.status,
+        image: getEvent?.fileLocation,
+        initialDate: getEvent?.initialDate,
+        eventDate: getEvent?.eventDate,
+        finishDate: getEvent?.finishDate
       };
-
       return res.status(200).json({ event: data });
     } catch (error) {
       return res.status(400).json({ message: { error: error.message } });
@@ -86,8 +85,8 @@ const handler = nextConnect<NextApiRequest, NextApiResponse>()
           }
         });
 
-        if (getEvent.fileKey !== null) {
-          await deleteS3(getEvent.fileKey);
+        if (getEvent !== null) {
+          if (getEvent.fileKey) await deleteS3(getEvent.fileKey);
         }
       }
 
